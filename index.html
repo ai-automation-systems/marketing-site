@@ -3,211 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Продвижение и настройка бизнеса — соцсети, реклама, сайты</title>
-  <meta name="description" content="Продающая настройка соцсетей, автоматизация, сайты, Яндекс Директ и VK Реклама, профессиональные фото и видео. Бесплатный аудит за 15 минут.">
+  <title>Продвижение и настройка бизнеса — соцсети, реклама, сайты, контент</title>
+  <meta name="description" content="Настраиваем соцсети, рекламу, сайты и автоматизацию так, чтобы приходили заявки. Бесплатный аудит за 15 минут.">
+  <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.className = "js";</script>
 </head>
 <body>
 
   <!-- ══════════════════════════════════════════════
-       НАСТРОЙКИ САЙТА — меняются в js/config.js:
-       название бренда, ссылка на Telegram, телефон
+       НАСТРОЙКИ (название, Telegram) — в js/config.js
        ══════════════════════════════════════════════ -->
 
   <header class="header">
-    <div class="container header__inner">
-      <a href="#" class="logo" data-brand>СТУДИЯ</a>
+    <div class="shell header__inner">
+      <a href="#top" class="logo" data-brand>СТУДИЯ</a>
       <nav class="nav">
         <a href="#services">Услуги</a>
-        <a href="#packages">Пакеты</a>
-        <a href="#process">Как работаем</a>
+        <a href="#approach">Подход</a>
         <a href="#cases">Кейсы</a>
+        <a href="#contact">Контакты</a>
       </nav>
-      <a href="#" class="btn btn--outline btn--sm" data-tg>Написать в Telegram</a>
-      <button class="burger" aria-label="Меню"><span></span><span></span></button>
+      <a href="#" class="pill" data-tg>Обсудить проект <i>↗</i></a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <!-- ХИРО -->
+    <!-- ───────────── ХИРО ───────────── -->
     <section class="hero">
-      <div class="container">
-        <p class="hero__label">Продвижение и настройка бизнеса</p>
-        <h1 class="hero__title">Настроим соцсети и&nbsp;рекламу так, чтобы приходили <em>заявки</em>, а&nbsp;не&nbsp;лайки</h1>
-        <p class="hero__sub">Соцсети, автоматизация, сайты, Яндекс&nbsp;Директ и&nbsp;VK&nbsp;Реклама, профессиональный контент — под&nbsp;ключ для&nbsp;вашего бизнеса.</p>
-        <div class="hero__actions">
-          <a href="#" class="btn btn--primary" data-tg>Получить бесплатный аудит</a>
-          <a href="#services" class="btn btn--ghost">Смотреть услуги</a>
-        </div>
-        <p class="hero__note">Аудит ваших соцсетей и рекламы — бесплатно, за&nbsp;15&nbsp;минут. Покажем, где&nbsp;вы теряете клиентов.</p>
-      </div>
-    </section>
-
-    <!-- УСЛУГИ -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__num">01</span>
-          <h2 class="section__title">Услуги</h2>
-        </div>
-        <div class="services">
-          <article class="service">
-            <span class="service__num">/01</span>
-            <h3>Продающая настройка соцсетей</h3>
-            <p>Оформление, позиционирование и контент-система, которые превращают подписчиков в&nbsp;покупателей.</p>
-          </article>
-          <article class="service">
-            <span class="service__num">/02</span>
-            <h3>Автоматизация</h3>
-            <p>Чат-боты, автоответы, воронки в&nbsp;мессенджерах — заявки обрабатываются сами, даже&nbsp;ночью.</p>
-          </article>
-          <article class="service">
-            <span class="service__num">/03</span>
-            <h3>Создание и редизайн сайтов</h3>
-            <p>Быстрые продающие лендинги и&nbsp;доработка существующих сайтов под&nbsp;конверсию.</p>
-          </article>
-          <article class="service">
-            <span class="service__num">/04</span>
-            <h3>Яндекс Директ и VK Реклама</h3>
-            <p>Настройка и ведение рекламы с&nbsp;прозрачной отчётностью: вы&nbsp;видите, во&nbsp;что превращается каждый рубль.</p>
-          </article>
-          <article class="service">
-            <span class="service__num">/05</span>
-            <h3>Фото и видео для бизнеса</h3>
-            <p>Профессиональный контент для&nbsp;страниц организации: съёмка, монтаж, упаковка под&nbsp;площадки.</p>
-          </article>
-          <article class="service service--cta">
-            <h3>Не знаете, с чего начать?</h3>
-            <p>Начните с бесплатного аудита — скажем честно, что&nbsp;даст результат именно&nbsp;вам.</p>
-            <a href="#" class="btn btn--primary btn--sm" data-tg>Запросить аудит</a>
-          </article>
+      <div class="shell">
+        <p class="hero__kicker"><i>✦</i> Продвижение и настройка бизнеса</p>
+        <h1 class="hero__title">
+          <span class="line">Делаем так,</span>
+          <span class="line">чтобы приходили</span>
+          <span class="line">заявки<i class="mark">↗</i></span>
+          <span class="line line--thin">а не лайки</span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__sub">Соцсети, реклама, сайты, автоматизация и контент — собираем в одну систему, которая приносит клиентов.</p>
+          <div class="hero__cta">
+            <a href="#" class="btn" data-tg>Бесплатный аудит</a>
+            <p class="hero__note">15 минут — покажем, где вы теряете клиентов</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ПАКЕТЫ -->
-    <section class="section section--tint" id="packages">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__num">02</span>
-          <h2 class="section__title">Пакеты</h2>
+    <!-- ───────────── ТИКЕР ───────────── -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__row">
+        <span>Соцсети <i>✦</i> Автоматизация <i>✦</i> Сайты <i>✦</i> Яндекс Директ <i>✦</i> VK Реклама <i>✦</i> Фото и видео <i>✦</i></span>
+        <span>Соцсети <i>✦</i> Автоматизация <i>✦</i> Сайты <i>✦</i> Яндекс Директ <i>✦</i> VK Реклама <i>✦</i> Фото и видео <i>✦</i></span>
+      </div>
+    </div>
+
+    <!-- ───────────── УСЛУГИ ───────────── -->
+    <section class="block" id="services">
+      <div class="shell">
+        <div class="block__head">
+          <span class="tag">01 — Услуги</span>
+          <h2 class="block__title">Что делаем<i class="mark">®</i></h2>
         </div>
-        <div class="packages">
-          <article class="package">
-            <h3>Старт</h3>
-            <p class="package__desc">Для тех, кому нужно быстро привести соцсети в&nbsp;порядок.</p>
-            <ul>
-              <li>Аудит и стратегия</li>
-              <li>Продающее оформление профилей</li>
-              <li>Контент-план на месяц</li>
-              <li>Базовая автоматизация ответов</li>
-            </ul>
-            <a href="#" class="btn btn--outline" data-tg>Обсудить</a>
-          </article>
-          <article class="package package--featured">
-            <span class="package__badge">Популярный</span>
-            <h3>Продвижение</h3>
-            <p class="package__desc">Соцсети + реклама: стабильный поток заявок.</p>
-            <ul>
-              <li>Всё из пакета «Старт»</li>
-              <li>Настройка Яндекс Директ / VK Рекламы</li>
-              <li>Ведение и оптимизация кампаний</li>
-              <li>Ежемесячная отчётность</li>
-            </ul>
-            <a href="#" class="btn btn--primary" data-tg>Обсудить</a>
-          </article>
-          <article class="package">
-            <h3>Под ключ</h3>
-            <p class="package__desc">Полная упаковка бизнеса: от сайта до&nbsp;контента.</p>
-            <ul>
-              <li>Всё из пакета «Продвижение»</li>
-              <li>Создание или редизайн сайта</li>
-              <li>Профессиональные фото и видео</li>
-              <li>Сквозная автоматизация заявок</li>
-            </ul>
-            <a href="#" class="btn btn--outline" data-tg>Обсудить</a>
-          </article>
+
+        <div class="rows">
+          <a href="#" class="row" data-tg>
+            <span class="row__num">01</span>
+            <span class="row__name">Продающая настройка соцсетей</span>
+            <span class="row__desc">Позиционирование, оформление и контент-система, которая превращает подписчиков в покупателей</span>
+            <span class="row__arrow">↗</span>
+          </a>
+          <a href="#" class="row" data-tg>
+            <span class="row__num">02</span>
+            <span class="row__name">Автоматизация</span>
+            <span class="row__desc">Чат-боты, автоворонки и автоответы — заявки обрабатываются сами, даже ночью</span>
+            <span class="row__arrow">↗</span>
+          </a>
+          <a href="#" class="row" data-tg>
+            <span class="row__num">03</span>
+            <span class="row__name">Сайты под ключ</span>
+            <span class="row__desc">Создание и редизайн: быстрые страницы, заточенные под заявку, а не под красоту</span>
+            <span class="row__arrow">↗</span>
+          </a>
+          <a href="#" class="row" data-tg>
+            <span class="row__num">04</span>
+            <span class="row__name">Яндекс Директ и VK Реклама</span>
+            <span class="row__desc">Настройка и ведение с прозрачной отчётностью: видно, во что превращается каждый рубль</span>
+            <span class="row__arrow">↗</span>
+          </a>
+          <a href="#" class="row" data-tg>
+            <span class="row__num">05</span>
+            <span class="row__name">Фото и видео для бизнеса</span>
+            <span class="row__desc">Съёмка, монтаж и упаковка контента под площадки и страницы организаций</span>
+            <span class="row__arrow">↗</span>
+          </a>
         </div>
-        <p class="packages__note">Точную стоимость рассчитываем после бесплатного аудита — она&nbsp;зависит от&nbsp;задач и&nbsp;ниши.</p>
+
+        <div class="combo">
+          <span>Соцсети</span><b>+</b><span>Реклама</span><b>+</b><span>Сайт</span><b>+</b><span>Контент</span>
+          <p class="combo__note">Работает сильнее всего вместе — когда каналы не спорят друг с другом, а ведут к одной заявке.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ПРОЦЕСС -->
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__num">03</span>
-          <h2 class="section__title">Как работаем</h2>
+    <!-- ───────────── ПОДХОД ───────────── -->
+    <section class="block block--invert" id="approach">
+      <div class="shell">
+        <div class="block__head">
+          <span class="tag">02 — Подход</span>
+          <h2 class="block__title">Как работаем<i class="mark">✦</i></h2>
         </div>
+
         <div class="steps">
-          <div class="step">
-            <span class="step__num">1</span>
+          <article class="step">
+            <span class="step__num">01</span>
             <h3>Аудит</h3>
-            <p>Бесплатно разбираем ваши соцсети, рекламу и&nbsp;сайт. Показываем, где&nbsp;теряются клиенты.</p>
-          </div>
-          <div class="step">
-            <span class="step__num">2</span>
+            <p>Бесплатно разбираем соцсети, рекламу и сайт. Показываем, где именно теряются клиенты — с конкретикой, а не общими словами.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">02</span>
             <h3>План</h3>
-            <p>Предлагаем конкретный план работ с&nbsp;понятными сроками и&nbsp;фиксированной стоимостью.</p>
-          </div>
-          <div class="step">
-            <span class="step__num">3</span>
+            <p>Собираем решение под вашу задачу и нишу. Понятные сроки, фиксированная стоимость, никаких сюрпризов по ходу.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">03</span>
             <h3>Запуск</h3>
-            <p>Настраиваем, оформляем, запускаем. Вы&nbsp;видите каждый этап и&nbsp;согласовываете результат.</p>
-          </div>
-          <div class="step">
-            <span class="step__num">4</span>
+            <p>Настраиваем, оформляем, запускаем. Каждый этап согласовываем — вы всегда видите, что происходит.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">04</span>
             <h3>Результат</h3>
-            <p>Отчитываемся цифрами: заявки, охваты, стоимость клиента. Улучшаем то, что&nbsp;работает.</p>
-          </div>
+            <p>Отчитываемся цифрами: заявки, охваты, стоимость клиента. Усиливаем то, что сработало, отключаем лишнее.</p>
+          </article>
         </div>
+
+        <p class="claim">Не продаём часы работы<i class="mark">—</i> отвечаем за результат</p>
       </div>
     </section>
 
-    <!-- КЕЙСЫ (заглушка) -->
-    <section class="section section--tint" id="cases">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__num">04</span>
-          <h2 class="section__title">Кейсы</h2>
+    <!-- ───────────── КЕЙСЫ ───────────── -->
+    <section class="block" id="cases">
+      <div class="shell">
+        <div class="block__head">
+          <span class="tag">03 — Кейсы</span>
+          <h2 class="block__title">Работы<i class="mark">↗</i></h2>
         </div>
+
         <div class="cases">
-          <article class="case case--soon">
-            <p class="case__tag">Скоро</p>
+          <article class="case">
+            <span class="case__tag">Скоро</span>
             <h3>Раздел наполняется</h3>
-            <p>Мы публикуем кейсы только с&nbsp;согласия клиентов и&nbsp;с&nbsp;реальными цифрами. Первые разборы появятся здесь в&nbsp;ближайшее время.</p>
+            <p>Публикуем кейсы только с согласия клиентов и только с реальными цифрами. Первые разборы появятся здесь в ближайшее время.</p>
           </article>
-          <article class="case case--soon">
-            <p class="case__tag">Скоро</p>
-            <h3>Хотите увидеть примеры?</h3>
-            <p>Напишите нам — покажем работы, которые ещё&nbsp;не&nbsp;опубликованы на&nbsp;сайте.</p>
-            <a href="#" class="link-arrow" data-tg>Запросить примеры →</a>
-          </article>
+          <a href="#" class="case case--action" data-tg>
+            <span class="case__tag">Сейчас</span>
+            <h3>Показать примеры лично</h3>
+            <p>Напишите — пришлём работы, которые ещё не опубликованы на сайте, и разберём похожий на вашу задачу случай.</p>
+            <span class="case__link">Запросить примеры <i>↗</i></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ФИНАЛЬНЫЙ CTA -->
-    <section class="cta" id="contact">
-      <div class="container">
-        <h2 class="cta__title">Начните с&nbsp;бесплатного аудита</h2>
-        <p class="cta__sub">За 15 минут покажем, где ваш бизнес теряет клиентов в&nbsp;соцсетях и&nbsp;рекламе — и&nbsp;что с&nbsp;этим делать.</p>
-        <a href="#" class="btn btn--light" data-tg>Написать в Telegram</a>
+    <!-- ───────────── CTA ───────────── -->
+    <section class="final" id="contact">
+      <div class="shell">
+        <p class="tag">04 — Контакты</p>
+        <h2 class="final__title">Начнём с аудита<i class="mark">✦</i></h2>
+        <p class="final__sub">За 15 минут разберём ваши соцсети и рекламу и скажем честно, что даст результат именно вам. Бесплатно и без обязательств.</p>
+        <a href="#" class="btn btn--big" data-tg>Написать в Telegram <i>↗</i></a>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <span class="logo logo--sm" data-brand>СТУДИЯ</span>
-      <p class="footer__copy">© <span data-year>2026</span>. Продвижение и настройка бизнеса.</p>
-      <a href="#" class="footer__link" data-tg>Telegram</a>
+    <div class="shell footer__inner">
+      <span class="logo" data-brand>СТУДИЯ</span>
+      <p>© <span data-year>2026</span> — Продвижение и настройка бизнеса</p>
+      <a href="#" data-tg>Telegram <i>↗</i></a>
     </div>
   </footer>
 

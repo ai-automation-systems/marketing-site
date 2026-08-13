@@ -14,11 +14,15 @@ document.querySelectorAll("[data-year]").forEach(el => {
 // Мобильное меню
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav");
-burger.addEventListener("click", () => {
-  document.body.classList.toggle("nav-open");
-});
+const setMenu = open => {
+  document.body.classList.toggle("nav-open", open);
+  burger.setAttribute("aria-expanded", String(open));
+};
+burger.addEventListener("click", () =>
+  setMenu(!document.body.classList.contains("nav-open"))
+);
 nav.querySelectorAll("a").forEach(a =>
-  a.addEventListener("click", () => document.body.classList.remove("nav-open"))
+  a.addEventListener("click", () => setMenu(false))
 );
 
 // Плавное появление секций
@@ -31,4 +35,4 @@ const observer = new IntersectionObserver(
   }),
   { threshold: 0.12 }
 );
-document.querySelectorAll(".section, .cta").forEach(el => observer.observe(el));
+document.querySelectorAll(".block, .final").forEach(el => observer.observe(el));
