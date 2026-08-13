@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-automation-systems.github.io/marketing-site/sitemap.xml
