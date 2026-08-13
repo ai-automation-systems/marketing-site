@@ -181,8 +181,10 @@ i { font-style: normal; }
 .ticker__row {
   display: flex;
   width: max-content;
-  animation: slide 38s linear infinite;
+  animation: slide 42s linear infinite;
+  will-change: transform;
 }
+.ticker:hover .ticker__row { animation-play-state: paused; }
 .ticker__row span {
   font-size: clamp(15px, 1.6vw, 21px);
   font-weight: 800;
@@ -194,10 +196,11 @@ i { font-style: normal; }
 .ticker__row i { opacity: 0.35; margin: 0 7px; }
 @keyframes slide {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-50%); }   /* ровно 3 копии из 6 — стык незаметен */
 }
+/* при системном «уменьшении движения» не останавливаем, а слегка замедляем */
 @media (prefers-reduced-motion: reduce) {
-  .ticker__row { animation: none; }
+  .ticker__row { animation-duration: 60s; }
 }
 
 /* ─────────── Блоки ─────────── */
