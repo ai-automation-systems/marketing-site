@@ -74,9 +74,24 @@ i { font-style: normal; }
   height: 78px;
 }
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--white);
+}
+.logo__mark {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  overflow: visible;   /* линия выходит за пределы viewBox-круга */
+}
+.logo__text {
   font-weight: 800;
-  font-size: 19px;
-  letter-spacing: 0.16em;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 .nav { display: flex; gap: 34px; margin-left: auto; margin-right: 8px; }
 .nav a {
@@ -517,4 +532,7 @@ i { font-style: normal; }
   .btn--big { padding: 17px 32px; font-size: 15.5px; }
 
   .footer__inner { flex-direction: column; text-align: center; gap: 16px; }
+  /* на узких экранах длинное название переносим в две строки */
+  .logo__text { font-size: 11px; letter-spacing: 0.12em; white-space: normal; max-width: 128px; }
+  .logo__mark { width: 24px; height: 24px; }
 }
