@@ -128,11 +128,6 @@ i { font-style: normal; }
   line-height: 1;
 }
 .hero__title .line { display: block; }
-.hero__title .line--thin {
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  opacity: 0.5;
-}
 .hero__mark {
   width: 100%;
   height: auto;
