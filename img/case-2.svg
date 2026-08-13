@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" fill="none" role="img" aria-label="Абстрактный паттерн: охват и связи">
+  <g stroke="#ffffff" stroke-width="1" opacity="0.14">
+    <circle cx="200" cy="130" r="118"/>
+    <circle cx="200" cy="130" r="82"/>
+    <circle cx="200" cy="130" r="46"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="1" opacity="0.3">
+    <line x1="200" y1="130" x2="200" y2="12"/>
+    <line x1="200" y1="130" x2="303" y2="189"/>
+    <line x1="200" y1="130" x2="97" y2="189"/>
+    <line x1="200" y1="130" x2="318" y2="130"/>
+    <line x1="200" y1="130" x2="118" y2="72"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="200" cy="130" r="5"/>
+    <circle cx="200" cy="12" r="4" opacity="0.85"/>
+    <circle cx="303" cy="189" r="4" opacity="0.7"/>
+    <circle cx="97" cy="189" r="4" opacity="0.7"/>
+    <circle cx="318" cy="130" r="3.5" opacity="0.55"/>
+    <circle cx="118" cy="72" r="3.5" opacity="0.55"/>
+  </g>
+</svg>

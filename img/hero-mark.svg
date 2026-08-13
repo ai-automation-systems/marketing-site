@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none" role="img" aria-label="Абстрактный знак: рост и охват">
+  <g stroke="#ffffff" stroke-width="1" vector-effect="non-scaling-stroke">
+    <circle cx="240" cy="240" r="219" opacity="0.16"/>
+    <circle cx="240" cy="240" r="168" opacity="0.22"/>
+    <circle cx="240" cy="240" r="117" opacity="0.3"/>
+    <circle cx="240" cy="240" r="66" opacity="0.4"/>
+  </g>
+
+  <!-- сетка координат -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.14">
+    <line x1="240" y1="21" x2="240" y2="459"/>
+    <line x1="21" y1="240" x2="459" y2="240"/>
+  </g>
+
+  <!-- диагональ роста -->
+  <g stroke="#ffffff" stroke-width="2" stroke-linecap="square">
+    <line x1="112" y1="368" x2="340" y2="140"/>
+    <polyline points="286,140 340,140 340,194" fill="none"/>
+  </g>
+
+  <!-- узлы -->
+  <g fill="#ffffff">
+    <circle cx="112" cy="368" r="4"/>
+    <circle cx="176" cy="304" r="3" opacity="0.55"/>
+    <circle cx="240" cy="240" r="5"/>
+    <circle cx="304" cy="176" r="3" opacity="0.55"/>
+  </g>
+
+  <!-- засечки на внешнем круге -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.35">
+    <line x1="240" y1="21" x2="240" y2="41"/>
+    <line x1="459" y1="240" x2="439" y2="240"/>
+    <line x1="240" y1="459" x2="240" y2="439"/>
+    <line x1="21" y1="240" x2="41" y2="240"/>
+  </g>
+</svg>
