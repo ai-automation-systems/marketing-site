@@ -1,0 +1,419 @@
+/* ═══════════ Премиум-минимализм ═══════════ */
+
+:root {
+  --ink: #16150f;
+  --ink-soft: #5c5a52;
+  --bg: #faf9f6;
+  --bg-tint: #f1efe9;
+  --line: #e3e0d8;
+  --accent: #16150f;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --container: 1200px;
+  --radius: 2px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+h1, h2, h3 { font-weight: 500; line-height: 1.15; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── Кнопки ─── */
+.btn {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.btn--primary { background: var(--ink); color: var(--bg); }
+.btn--primary:hover { background: transparent; color: var(--ink); }
+.btn--outline { background: transparent; color: var(--ink); }
+.btn--outline:hover { background: var(--ink); color: var(--bg); }
+.btn--ghost { border-color: transparent; color: var(--ink-soft); }
+.btn--ghost:hover { color: var(--ink); }
+.btn--light { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+.btn--light:hover { background: transparent; color: var(--bg); }
+.btn--sm { padding: 11px 24px; font-size: 14px; }
+
+/* ─── Шапка ─── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 246, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  height: 76px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+.logo--sm { font-size: 18px; }
+.nav { display: flex; gap: 36px; }
+.nav a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--ink); }
+.burger { display: none; }
+
+/* ─── Хиро ─── */
+.hero {
+  padding: 140px 0 120px;
+}
+.hero__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 76px);
+  max-width: 17ch;
+  margin-bottom: 32px;
+}
+.hero__title em {
+  font-style: italic;
+}
+.hero__sub {
+  font-size: 19px;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin-bottom: 48px;
+}
+.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.hero__note {
+  margin-top: 28px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+/* ─── Секции ─── */
+.section { padding: 110px 0; }
+.section--tint { background: var(--bg-tint); }
+.section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 72px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.section__num {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 46px);
+}
+
+/* ─── Услуги ─── */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.service {
+  background: var(--bg);
+  padding: 44px 36px;
+  transition: background 0.3s;
+}
+.service:hover { background: var(--bg-tint); }
+.service__num {
+  display: block;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+}
+.service h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+.service p { font-size: 15.5px; color: var(--ink-soft); }
+.service--cta {
+  background: var(--ink);
+  color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+.service--cta:hover { background: var(--ink); }
+.service--cta p { color: rgba(250, 249, 246, 0.7); }
+.service--cta .btn {
+  align-self: flex-start;
+  margin-top: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--bg);
+}
+.service--cta .btn:hover { background: transparent; color: var(--bg); }
+
+/* ─── Пакеты ─── */
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.package {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.package--featured { border-color: var(--ink); }
+.package__badge {
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+}
+.package h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+.package__desc {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.package ul {
+  list-style: none;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+.package li {
+  font-size: 15px;
+  padding: 11px 0;
+  padding-left: 26px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.package li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-soft);
+}
+.package .btn { text-align: center; }
+.packages__note {
+  margin-top: 44px;
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+/* ─── Шаги ─── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+.step__num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  color: var(--line);
+  display: block;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+.step h3 { font-size: 19px; margin-bottom: 12px; }
+.step p { font-size: 15px; color: var(--ink-soft); }
+
+/* ─── Кейсы ─── */
+.cases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.case {
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 52px 44px;
+}
+.case__tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+.case h3 { font-size: 21px; margin-bottom: 14px; }
+.case p { font-size: 15.5px; color: var(--ink-soft); }
+.link-arrow {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s;
+}
+.link-arrow:hover { opacity: 0.6; }
+
+/* ─── CTA ─── */
+.cta {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 130px 0;
+  text-align: center;
+}
+.cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.5vw, 58px);
+  margin-bottom: 24px;
+}
+.cta__sub {
+  font-size: 18px;
+  color: rgba(250, 249, 246, 0.7);
+  max-width: 52ch;
+  margin: 0 auto 48px;
+}
+
+/* ─── Подвал ─── */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 36px 0;
+}
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.footer__copy { font-size: 13.5px; color: var(--ink-soft); }
+.footer__link {
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+.footer__link:hover { border-color: var(--ink); }
+
+/* ─── Появление секций ─────────────────────────────
+   Скрываем только при работающем JS (класс js на <html>),
+   чтобы без скриптов сайт оставался полностью видимым.
+   Первый экран не прячем никогда — он должен быть виден сразу. */
+.js .section, .js .cta {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js .in-view { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .section, .js .cta { opacity: 1; transform: none; transition: none; }
+}
+
+/* ─── Адаптив ─── */
+@media (max-width: 1020px) {
+  .services { grid-template-columns: repeat(2, 1fr); }
+  .packages { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .container { padding: 0 20px; }
+
+  .nav {
+    position: fixed;
+    inset: 76px 0 auto 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 20px 24px;
+    display: none;
+  }
+  .nav a { padding: 14px 0; font-size: 16px; }
+  .nav-open .nav { display: flex; }
+  .header .btn { display: none; }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .burger span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.25s;
+  }
+  .nav-open .burger span:first-child { transform: translateY(4px) rotate(45deg); }
+  .nav-open .burger span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+  .hero { padding: 90px 0 80px; }
+  .section { padding: 76px 0; }
+  .section__head { margin-bottom: 48px; }
+  .services { grid-template-columns: 1fr; }
+  .service { padding: 36px 28px; }
+  .steps { grid-template-columns: 1fr; gap: 40px; }
+  .cases { grid-template-columns: 1fr; }
+  .case { padding: 40px 28px; }
+  .cta { padding: 90px 0; }
+  .footer__inner { flex-direction: column; text-align: center; }
+}
