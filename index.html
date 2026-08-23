@@ -31,7 +31,7 @@
 <body>
 
   <!-- ══════════════════════════════════════════════
-       НАСТРОЙКИ (название, Telegram) — в js/config.js
+       НАСТРОЙКИ (название, Telegram) в js/config.js
        ══════════════════════════════════════════════ -->
 
   <header class="header">
@@ -68,13 +68,125 @@
             <span class="line">соцсети и рекламу</span>
             <span class="line">в поток заявок</span>
           </h1>
-          <img class="hero__mark" src="img/hero-mark.svg" alt="" width="480" height="480" loading="eager">
+          <svg class="hero__map" viewBox="0 0 560 560" role="img" aria-label="Карта: Воронеж и города России в радиусе 800 километров" data-vx="280.0" data-vy="280.0" data-size="560">
+  <g class="map__rings">
+    <circle cx="280.0" cy="280.0" r="49.0"/>
+    <circle cx="280.0" cy="280.0" r="98.0"/>
+    <circle cx="280.0" cy="280.0" r="147.0"/>
+    <circle cx="280.0" cy="280.0" r="196.0"/>
+    <text class="map__scale" x="285.0" y="99.0">800 км</text>
+  </g>
+  <g class="map__spokes">
+    <line x1="280.0" y1="280.0" x2="256.1" y2="168.6"/>
+    <line x1="280.0" y1="280.0" x2="286.5" y2="254.6"/>
+    <line x1="280.0" y1="280.0" x2="317.3" y2="250.5"/>
+    <line x1="280.0" y1="280.0" x2="229.6" y2="277.1"/>
+    <line x1="280.0" y1="280.0" x2="235.1" y2="308.1"/>
+    <line x1="280.0" y1="280.0" x2="229.2" y2="243.5"/>
+    <line x1="280.0" y1="280.0" x2="255.1" y2="210.8"/>
+    <line x1="280.0" y1="280.0" x2="288.8" y2="199.3"/>
+    <line x1="280.0" y1="280.0" x2="201.5" y2="234.6"/>
+    <line x1="280.0" y1="280.0" x2="374.9" y2="234.5"/>
+    <line x1="280.0" y1="280.0" x2="395.9" y2="278.4"/>
+    <line x1="280.0" y1="280.0" x2="289.8" y2="400.7"/>
+    <line x1="280.0" y1="280.0" x2="375.8" y2="357.2"/>
+    <line x1="280.0" y1="280.0" x2="352.8" y2="150.6"/>
+    <line x1="280.0" y1="280.0" x2="276.1" y2="460.6"/>
+    <line x1="280.0" y1="280.0" x2="458.4" y2="224.8"/>
+    <line x1="280.0" y1="280.0" x2="333.8" y2="459.6"/>
+    <line x1="280.0" y1="280.0" x2="431.7" y2="157.2"/>
+  </g>
+  <g class="map__cities">
+    <g class="map__city" data-city="Москва" data-km="465" data-x="256.1" data-y="168.6">
+      <circle cx="256.1" cy="168.6" r="3.4"/>
+      <text x="256.1" y="154.6" text-anchor="middle">Москва</text>
+    </g>
+    <g class="map__city" data-city="Липецк" data-km="107" data-x="286.5" data-y="254.6">
+      <circle cx="286.5" cy="254.6" r="3.4"/>
+      <text x="286.5" y="240.6" text-anchor="middle">Липецк</text>
+    </g>
+    <g class="map__city" data-city="Тамбов" data-km="194" data-x="317.3" data-y="250.5">
+      <circle cx="317.3" cy="250.5" r="3.4"/>
+      <text x="332.3" y="255.5" text-anchor="start">Тамбов</text>
+    </g>
+    <g class="map__city" data-city="Курск" data-km="206" data-x="229.6" data-y="277.1">
+      <circle cx="229.6" cy="277.1" r="3.4"/>
+      <text x="214.6" y="282.1" text-anchor="end">Курск</text>
+    </g>
+    <g class="map__city" data-city="Белгород" data-km="216" data-x="235.1" data-y="308.1">
+      <circle cx="235.1" cy="308.1" r="3.4"/>
+      <text x="220.1" y="327.1" text-anchor="end">Белгород</text>
+    </g>
+    <g class="map__city" data-city="Орёл" data-km="255" data-x="229.2" data-y="243.5">
+      <circle cx="229.2" cy="243.5" r="3.4"/>
+      <text x="229.2" y="229.5" text-anchor="middle">Орёл</text>
+    </g>
+    <g class="map__city" data-city="Тула" data-km="300" data-x="255.1" data-y="210.8">
+      <circle cx="255.1" cy="210.8" r="3.4"/>
+      <text x="255.1" y="196.8" text-anchor="middle">Тула</text>
+    </g>
+    <g class="map__city is-quiet" data-city="Рязань" data-km="331" data-x="288.8" data-y="199.3">
+      <circle cx="288.8" cy="199.3" r="3.4"/>
+      <text x="288.8" y="185.3" text-anchor="middle">Рязань</text>
+    </g>
+    <g class="map__city is-quiet" data-city="Брянск" data-km="370" data-x="201.5" data-y="234.6">
+      <circle cx="201.5" cy="234.6" r="3.4"/>
+      <text x="186.5" y="224.6" text-anchor="end">Брянск</text>
+    </g>
+    <g class="map__city is-quiet" data-city="Пенза" data-km="429" data-x="374.9" data-y="234.5">
+      <circle cx="374.9" cy="234.5" r="3.4"/>
+      <text x="389.9" y="224.5" text-anchor="start">Пенза</text>
+    </g>
+    <g class="map__city" data-city="Саратов" data-km="473" data-x="395.9" data-y="278.4">
+      <circle cx="395.9" cy="278.4" r="3.4"/>
+      <text x="410.9" y="283.4" text-anchor="start">Саратов</text>
+    </g>
+    <g class="map__city" data-city="Ростов-на-Дону" data-km="494" data-x="289.8" data-y="400.7">
+      <circle cx="289.8" cy="400.7" r="3.4"/>
+      <text x="289.8" y="421.7" text-anchor="middle">Ростов-на-Дону</text>
+    </g>
+    <g class="map__city" data-city="Волгоград" data-km="502" data-x="375.8" data-y="357.2">
+      <circle cx="375.8" cy="357.2" r="3.4"/>
+      <text x="390.8" y="376.2" text-anchor="start">Волгоград</text>
+    </g>
+    <g class="map__city" data-city="Нижний Новгород" data-km="606" data-x="352.8" data-y="150.6">
+      <circle cx="352.8" cy="150.6" r="3.4"/>
+      <text x="367.8" y="140.6" text-anchor="start">Нижний Новгород</text>
+    </g>
+    <g class="map__city" data-city="Краснодар" data-km="737" data-x="276.1" data-y="460.6">
+      <circle cx="276.1" cy="460.6" r="3.4"/>
+      <text x="276.1" y="481.6" text-anchor="middle">Краснодар</text>
+    </g>
+    <g class="map__city" data-city="Самара" data-km="762" data-x="458.4" data-y="224.8">
+      <circle cx="458.4" cy="224.8" r="3.4"/>
+      <text x="473.4" y="229.8" text-anchor="start">Самара</text>
+    </g>
+    <g class="map__city is-quiet" data-city="Ставрополь" data-km="765" data-x="333.8" data-y="459.6">
+      <circle cx="333.8" cy="459.6" r="3.4"/>
+      <text x="333.8" y="480.6" text-anchor="middle">Ставрополь</text>
+    </g>
+    <g class="map__city" data-city="Казань" data-km="797" data-x="431.7" data-y="157.2">
+      <circle cx="431.7" cy="157.2" r="3.4"/>
+      <text x="446.7" y="162.2" text-anchor="start">Казань</text>
+    </g>
+  </g>
+  <g class="map__needle" style="transform-origin:280.0px 280.0px">
+    <line x1="280.0" y1="280.0" x2="280.0" y2="130.0"/>
+    <polygon points="280.0,114.0 274.0,134.0 286.0,134.0"/>
+  </g>
+  <g class="map__base">
+    <circle class="map__pulse" cx="280.0" cy="280.0" r="10"/>
+    <circle cx="280.0" cy="280.0" r="4.8"/>
+    <text x="280.0" y="312.0" text-anchor="middle">ВОРОНЕЖ</text>
+  </g>
+  <text class="map__read" x="280.0" y="524" text-anchor="middle"><tspan class="map__read-city">Мы здесь</tspan><tspan class="map__read-km" dx="10"></tspan></text>
+</svg>
         </div>
         <div class="hero__bottom">
-          <p class="hero__sub">Соцсети, реклама, сайты, автоматизация и контент — собираем в одну систему. Вместо пяти подрядчиков — одна команда.</p>
+          <p class="hero__sub">Соцсети, реклама, сайты, автоматизация и контент. Всё это делаем сами. Не придётся собирать по подрядчику на каждую задачу и сводить их между собой.</p>
           <div class="hero__cta">
             <a href="#" class="btn" data-tg>Получить бесплатный аудит</a>
-            <p class="hero__note">15 минут в Telegram — покажем, где вы теряете клиентов</p>
+            <p class="hero__note">15 минут в Telegram. Покажем, где именно у вас утекают заявки</p>
           </div>
         </div>
       </div>
@@ -84,12 +196,12 @@
     <div class="ticker" aria-hidden="true">
       <!-- 6 копий: строка должна быть шире любого монитора, иначе в цикле появится разрыв -->
       <div class="ticker__row">
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
-        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
+        <span class="ticker__group"><i>Соцсети</i><i>Автоматизация</i><i>Сайты</i><i>Яндекс Директ</i><i>VK Реклама</i><i>Фото и видео</i><i>SMM</i></span>
       </div>
     </div>
 
@@ -97,7 +209,7 @@
     <section class="block" id="services">
       <div class="shell">
         <div class="block__head">
-          <span class="tag">01 — Услуги</span>
+          <span class="tag">01 · Услуги</span>
           <h2 class="block__title">Что делаем</h2>
         </div>
 
@@ -105,30 +217,34 @@
           <a href="#" class="row" data-tg>
             <span class="row__num">01</span>
             <span class="row__name">Продающая настройка соцсетей</span>
-            <span class="row__desc">Позиционирование, оформление и контент-система, которая превращает подписчиков в покупателей</span>          </a>
+            <span class="row__desc">Разберём, кому и что вы продаёте, оформим профиль и наладим контент. Задача одна: чтобы подписчик доходил до покупки</span>          </a>
           <a href="#" class="row" data-tg>
             <span class="row__num">02</span>
             <span class="row__name">Автоматизация</span>
-            <span class="row__desc">Чат-боты, автоворонки и автоответы — заявки обрабатываются сами, даже ночью</span>          </a>
+            <span class="row__desc">Чат-боты, автоворонки, автоответы. Человек написал в три часа ночи. Ему ответят, а вы утром увидите заявку</span>          </a>
           <a href="#" class="row" data-tg>
             <span class="row__num">03</span>
             <span class="row__name">Сайты под ключ</span>
-            <span class="row__desc">Создание и редизайн: быстрые страницы, заточенные под заявку, а не под красоту</span>          </a>
+            <span class="row__desc">Создание и редизайн. Страницы грузятся быстро и собраны ради заявки. Красиво тоже будет, но это не главная цель</span>          </a>
           <a href="#" class="row" data-tg>
             <span class="row__num">04</span>
             <span class="row__name">Яндекс Директ и VK Реклама</span>
-            <span class="row__desc">Настройка и ведение с прозрачной отчётностью: видно, во что превращается каждый рубль</span>          </a>
+            <span class="row__desc">Настраиваем и ведём. В отчёте видно, сколько стоила заявка и откуда она пришла</span>          </a>
           <a href="#" class="row" data-tg>
             <span class="row__num">05</span>
             <span class="row__name">Фото и видео для бизнеса</span>
-            <span class="row__desc">Съёмка, монтаж и упаковка контента под площадки и страницы организаций</span>          </a>
+            <span class="row__desc">Снимаем и монтируем: ролики для соцсетей, фото для сайта и карточек на картах</span>          </a>
+          <a href="#" class="row" data-tg>
+            <span class="row__num">06</span>
+            <span class="row__name">SMM и ведение соцсетей</span>
+            <span class="row__desc">Берём страницу на себя: контент-план, посты и сторис, ответы в комментариях и в личных. Вы не решаете каждый понедельник, что выкладывать</span>          </a>
         </div>
 
         <div class="combo">
           <div class="combo__row">
             <span>Соцсети</span><b>+</b><span>Реклама</span><b>+</b><span>Сайт</span><b>+</b><span>Контент</span>
           </div>
-          <p class="combo__note">Работает сильнее всего вместе — когда каналы не спорят друг с другом, а ведут к одной заявке.</p>
+          <p class="combo__note">Сильнее всего это работает вместе: когда реклама, профиль и сайт говорят одно и то же и ведут в одно место.</p>
         </div>
       </div>
     </section>
@@ -137,7 +253,7 @@
     <section class="block block--invert" id="approach">
       <div class="shell">
         <div class="block__head">
-          <span class="tag">02 — Подход</span>
+          <span class="tag">02 · Подход</span>
           <h2 class="block__title">Как работаем</h2>
         </div>
 
@@ -145,37 +261,37 @@
           <article class="step">
             <span class="step__num">01</span>
             <h3>Аудит</h3>
-            <p>Бесплатно разбираем соцсети, рекламу и сайт. Показываем, где именно теряются клиенты — с конкретикой, а не общими словами.</p>
+            <p>Бесплатно смотрим соцсети, рекламу и сайт. Говорим предметно: вот здесь описание не объясняет, чем вы полезны, а здесь человек ждёт ответа до завтра.</p>
           </article>
           <article class="step">
             <span class="step__num">02</span>
             <h3>Смета</h3>
-            <p>Фиксируем состав работ, сроки и стоимость до старта. Дальше цена не растёт — никаких доплат по ходу.</p>
+            <p>До старта записываем, что делаем, за какой срок и за сколько. Потом эта цифра не меняется. Доплат по ходу не будет.</p>
           </article>
           <article class="step">
             <span class="step__num">03</span>
             <h3>Настройка</h3>
-            <p>Собираем всё под ключ: соцсети, рекламу, автоматизацию, сайт и контент. Каждый этап согласовываем.</p>
+            <p>Делаем всё под ключ и показываем каждый этап. Ничего не уходит в работу без вашего «да».</p>
           </article>
           <article class="step">
             <span class="step__num">04</span>
             <h3>Сдача</h3>
-            <p>Передаём готовую систему и показываем, как ей пользоваться. Окончательный расчёт — только после приёмки работы.</p>
+            <p>Отдаём готовое и учим этим пользоваться. Остаток денег берём после того, как вы приняли работу.</p>
           </article>
         </div>
 
-        <p class="claim">Сдаём результат — и только потом решаете, вести ли дальше</p>
+        <p class="claim">Сдаём результат, и только потом вы решаете, вести ли дальше</p>
 
         <div class="after">
           <article class="after__card">
-            <span class="after__tag">Дальше — вариант 1</span>
+            <span class="after__tag">Вариант 1</span>
             <h3>Ведёте сами</h3>
-            <p>Всё настроено, отлажено и передано вам. Система работает без нас, ежемесячных платежей нет. Это нормальный сценарий, а не «недоработка».</p>
+            <p>Всё настроено, отлажено и передано. Дальше работает без нас, платить каждый месяц не нужно. Так и задумано.</p>
           </article>
           <article class="after__card">
-            <span class="after__tag">Дальше — вариант 2</span>
+            <span class="after__tag">Вариант 2</span>
             <h3>Ведём мы</h3>
-            <p>Если захотите, берём ведение на себя за фиксированную сумму в месяц. Обсуждаем это после сдачи — когда вы уже видите результат, а не авансом.</p>
+            <p>Захотите, возьмём ведение на себя за фиксированную сумму в месяц. Но разговор об этом будет после сдачи, когда вы уже увидите результат.</p>
           </article>
         </div>
       </div>
@@ -185,36 +301,179 @@
     <section class="block" id="cases">
       <div class="shell">
         <div class="block__head">
-          <span class="tag">03 — Кейсы</span>
+          <span class="tag">03 · Кейсы</span>
           <h2 class="block__title">Работы</h2>
         </div>
 
-        <div class="cases">
-          <article class="case">
-            <img class="case__art" src="img/case-1.svg" alt="" width="400" height="260" loading="lazy">
-            <span class="case__tag">Скоро</span>
-            <h3>Кейсы готовятся к публикации</h3>
-            <p>Публикуем только с согласия клиентов и только с реальными цифрами. Первые разборы появятся здесь в ближайшее время.</p>
+        <div class="works">
+
+          <!-- ── Кейс 1 ── -->
+          <article class="work">
+            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-1">
+              <span class="work__cover">
+                <picture>
+                  <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-negorod-800.webp 800w, img/case-negorod.webp 1600w">
+                  <img src="img/case-negorod.jpg" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-negorod-800.jpg 800w, img/case-negorod.jpg 1600w" alt="Кейс: цифровое развитие кластера «НЕГОРОД» и Platinum Arena" width="1600" height="900" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="work__bar">
+                <span class="work__id">
+                  <b>НЕГОРОД · Platinum Arena</b>
+                  <i>Спортивно-гостиничный кластер</i>
+                </span>
+                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+              </span>
+            </button>
+
+            <div class="work__panel" id="work-1" inert>
+              <div class="work__grid">
+                <div class="work__main">
+                  <div class="work__video">
+                    <video class="work__v" preload="none" playsinline poster="video/poster-negorod.jpg" src="video/case-negorod.mp4"></video>
+                    <button class="work__play" type="button" aria-label="Смотреть видео о проекте НЕГОРОД">
+                      <span class="work__play-mark" aria-hidden="true"></span>
+                      <span class="work__play-txt">Смотреть видео</span>
+                    </button>
+                  </div>
+                  <p class="work__lede">Объединили продвижение клубного комплекса «НЕГОРОД», ледовой арены Platinum Arena и других направлений спортивно-гостиничного кластера.</p>
+                  <h4 class="work__sub">Что сделали</h4>
+                  <ul class="work__list">
+                    <li>Разработали и поддерживаем сайты проектов</li>
+                    <li>Оформили и сопровождаем социальные сети</li>
+                    <li>Организовали профессиональную фото- и видеосъёмку</li>
+                    <li>Создали систему онлайн-продажи билетов и бронирования услуг</li>
+                    <li>Внедрили электронное расписание катка</li>
+                    <li>Разработали онлайн-консьержа для гостей</li>
+                    <li>Упростили обработку обращений и работу администраторов</li>
+                    <li>Обеспечили цифровое сопровождение мероприятий кластера</li>
+                  </ul>
+                </div>
+                <aside class="work__side">
+                  <p class="work__metric"><b>+15<i>%</i></b><span>бронирований в месяц</span></p>
+                  <h4 class="work__sub">Результат</h4>
+                  <p class="work__result">Профессиональный контент и единая система продвижения повысили узнаваемость брендов. Гости получили удобный доступ к расписанию, билетам и бронированию, а нагрузка на администраторов снизилась.</p>
+                  <ul class="work__tags">
+                    <li>Сайты</li><li>Соцсети</li><li>Видео</li><li>Онлайн-билеты</li><li>Бронирование</li><li>Продвижение брендов</li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
           </article>
-          <a href="#" class="case case--action" data-tg>
-            <img class="case__art" src="img/case-2.svg" alt="" width="400" height="260" loading="lazy">
-            <span class="case__tag">Сейчас</span>
-            <h3>Показать примеры лично</h3>
-            <p>Напишите — пришлём работы, которые ещё не опубликованы на сайте, и разберём похожий на вашу задачу случай.</p>
-            <span class="case__link">Запросить примеры</span>
-          </a>
+
+          <!-- ── Кейс 2 ── -->
+          <article class="work">
+            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-2">
+              <span class="work__cover">
+                <picture>
+                  <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-sapozhnikov-800.webp 800w, img/case-sapozhnikov.webp 1600w">
+                  <img src="img/case-sapozhnikov.jpg" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-sapozhnikov-800.jpg 800w, img/case-sapozhnikov.jpg 1600w" alt="Кейс: система привлечения клиентов для компании «Сапожников»" width="1600" height="900" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="work__bar">
+                <span class="work__id">
+                  <b>Сапожников</b>
+                  <i>Строительство и проектирование</i>
+                </span>
+                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+              </span>
+            </button>
+
+            <div class="work__panel" id="work-2" inert>
+              <div class="work__grid">
+                <div class="work__main">
+                  <p class="work__lede">Разработали и продолжаем развивать цифровую инфраструктуру строительной компании: от сайта и рекламы до профессионального контента, автоматизации обращений и CRM.</p>
+                  <h4 class="work__sub">Что сделали</h4>
+                  <ul class="work__list">
+                    <li>Создали и сопровождаем многостраничный сайт компании</li>
+                    <li>Настроили контекстную рекламу в Яндекс Директе</li>
+                    <li>Оформили и развиваем присутствие на Яндекс Картах</li>
+                    <li>Организовали профессиональную фото- и видеосъёмку</li>
+                    <li>Подготовили собственный видеоблог о строительстве</li>
+                    <li>Автоматизировали первое касание с потенциальным клиентом</li>
+                    <li>Настроили автоматическую передачу обращений в CRM</li>
+                    <li>Регулярно добавляем проекты и материалы со строительных площадок</li>
+                  </ul>
+                </div>
+                <aside class="work__side">
+                  <p class="work__metric"><b>−40<i>%</i></b><span>стоимость привлечения клиента</span></p>
+                  <h4 class="work__sub">Результат</h4>
+                  <p class="work__result">Компания получила собственную систему привлечения клиентов и снизила зависимость от Avito как основного источника обращений.</p>
+                  <ul class="work__tags">
+                    <li>Сайт</li><li>Яндекс Директ</li><li>Фото и видео</li><li>Видеоблог</li><li>Карты</li><li>Автоматизация</li><li>CRM</li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Кейс 3 ── -->
+          <article class="work">
+            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-3">
+              <span class="work__cover">
+                <picture>
+                  <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-prodent-800.webp 800w, img/case-prodent.webp 1600w">
+                  <img src="img/case-prodent.jpg" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-prodent-800.jpg 800w, img/case-prodent.jpg 1600w" alt="Кейс: комплексное продвижение стоматологической клиники «Про.Дент»" width="1600" height="900" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="work__bar">
+                <span class="work__id">
+                  <b>Про.Дент</b>
+                  <i>Стоматологическая клиника</i>
+                </span>
+                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+              </span>
+            </button>
+
+            <div class="work__panel" id="work-3" inert>
+              <div class="work__grid">
+                <div class="work__main">
+                  <div class="work__video">
+                    <video class="work__v" preload="none" playsinline poster="video/poster-prodent.jpg" src="video/case-prodent.mp4"></video>
+                    <button class="work__play" type="button" aria-label="Смотреть видео о проекте Про.Дент">
+                      <span class="work__play-mark" aria-hidden="true"></span>
+                      <span class="work__play-txt">Смотреть видео</span>
+                    </button>
+                  </div>
+                  <p class="work__lede">Создали цифровую инфраструктуру клиники с нуля: от сайта и социальных сетей до профессионального видеоконтента и автоматизированной записи пациентов.</p>
+                  <h4 class="work__sub">Что сделали</h4>
+                  <ul class="work__list">
+                    <li>Создание и дальнейшее сопровождение сайта</li>
+                    <li>Создание и оформление всех социальных сетей клиники</li>
+                    <li>Автоматизированная онлайн-запись пациентов на приём</li>
+                    <li>Профессиональная видеосъёмка для сайта, соцсетей и VK Видео</li>
+                    <li>Продвижение врачей и повышение их узнаваемости</li>
+                    <li>Размещение и оформление клиники на Яндекс Картах</li>
+                    <li>Подготовка цифровой системы к рекламе и дальнейшему развитию</li>
+                  </ul>
+                </div>
+                <aside class="work__side">
+                  <p class="work__note"><b>Особенность проекта</b>Сайт создан на упрощённой системе управления: администратор клиники сам обновляет услуги, цены, информацию о врачах и акции.</p>
+                  <h4 class="work__sub">Результат</h4>
+                  <p class="work__result">Клиника получила единую цифровую систему, которая представляет её в интернете, повышает узнаваемость врачей и помогает переводить обращения в запись на приём.</p>
+                  <ul class="work__tags">
+                    <li>Сайт</li><li>Соцсети</li><li>Видео</li><li>Яндекс Карты</li><li>Онлайн-запись</li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="works__cta">
+          <p><b>Показать примеры лично</b>Пришлём работы, которых пока нет на сайте, и разберём случай, похожий на вашу задачу.</p>
+          <a href="#" class="works__cta-btn" data-tg>Запросить примеры</a>
         </div>
       </div>
     </section>
-
     <!-- ───────────── CTA ───────────── -->
     <section class="final" id="contact">
       <div class="shell">
-        <p class="tag">04 — Контакты</p>
+        <p class="tag">04 · Контакты</p>
         <h2 class="final__title">Начнём с аудита</h2>
-        <p class="final__sub">За 15 минут разберём ваши соцсети и рекламу и скажем честно, что даст результат именно вам. Бесплатно и без обязательств.</p>
+        <p class="final__sub">За 15 минут посмотрим ваши соцсети и рекламу и скажем, что стоит делать, а что не стоит. Бесплатно, ни к чему не обязывает.</p>
         <a href="#" class="btn btn--big" data-tg>Получить бесплатный аудит</a>
-        <p class="final__note">Откроется чат в Telegram — ответим в течение рабочего дня</p>
+        <p class="final__note">Откроется чат в Telegram. Отвечаем в течение рабочего дня</p>
       </div>
     </section>
 
@@ -231,7 +490,7 @@
         </svg>
         <span class="logo__text" data-brand>Студия развития бизнеса</span>
       </span>
-      <p>© <span data-year>2026</span> — Продвижение и настройка бизнеса</p>
+      <p>© <span data-year>2026</span> · Продвижение и настройка бизнеса</p>
       <a href="#" data-tg>Telegram</a>
     </div>
   </footer>
