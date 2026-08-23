@@ -309,7 +309,7 @@
 
           <!-- ── Кейс 1 ── -->
           <article class="work">
-            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-1">
+            <button class="work__tile" type="button" aria-haspopup="dialog" data-modal="work-1">
               <span class="work__cover">
                 <picture>
                   <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-negorod-800.webp 800w, img/case-negorod.webp 1600w">
@@ -321,11 +321,15 @@
                   <b>НЕГОРОД · Platinum Arena</b>
                   <i>Спортивно-гостиничный кластер</i>
                 </span>
-                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+                <span class="work__chip">+15% бронирований</span>
               </span>
             </button>
 
-            <div class="work__panel" id="work-1" inert>
+            <dialog class="work__modal" id="work-1" aria-label="Кейс: НЕГОРОД · Platinum Arena">
+              <div class="work__mbar">
+                <span class="work__mtitle">НЕГОРОД · Platinum Arena<i>Спортивно-гостиничный кластер</i></span>
+                <button class="work__close" type="button" aria-label="Закрыть"><span aria-hidden="true"></span></button>
+              </div>
               <div class="work__grid">
                 <div class="work__main">
                   <div class="work__video">
@@ -357,12 +361,12 @@
                   </ul>
                 </aside>
               </div>
-            </div>
+            </dialog>
           </article>
 
           <!-- ── Кейс 2 ── -->
           <article class="work">
-            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-2">
+            <button class="work__tile" type="button" aria-haspopup="dialog" data-modal="work-2">
               <span class="work__cover">
                 <picture>
                   <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-sapozhnikov-800.webp 800w, img/case-sapozhnikov.webp 1600w">
@@ -374,11 +378,15 @@
                   <b>Сапожников</b>
                   <i>Строительство и проектирование</i>
                 </span>
-                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+                <span class="work__chip">−40% цена заявки</span>
               </span>
             </button>
 
-            <div class="work__panel" id="work-2" inert>
+            <dialog class="work__modal" id="work-2" aria-label="Кейс: Сапожников">
+              <div class="work__mbar">
+                <span class="work__mtitle">Сапожников<i>Строительство и проектирование</i></span>
+                <button class="work__close" type="button" aria-label="Закрыть"><span aria-hidden="true"></span></button>
+              </div>
               <div class="work__grid">
                 <div class="work__main">
                   <p class="work__lede">Разработали и продолжаем развивать цифровую инфраструктуру строительной компании: от сайта и рекламы до профессионального контента, автоматизации обращений и CRM.</p>
@@ -403,12 +411,12 @@
                   </ul>
                 </aside>
               </div>
-            </div>
+            </dialog>
           </article>
 
           <!-- ── Кейс 3 ── -->
           <article class="work">
-            <button class="work__head" type="button" aria-expanded="false" aria-controls="work-3">
+            <button class="work__tile" type="button" aria-haspopup="dialog" data-modal="work-3">
               <span class="work__cover">
                 <picture>
                   <source type="image/webp" sizes="(max-width: 900px) 100vw, 1280px" srcset="img/case-prodent-800.webp 800w, img/case-prodent.webp 1600w">
@@ -420,11 +428,15 @@
                   <b>Про.Дент</b>
                   <i>Стоматологическая клиника</i>
                 </span>
-                <span class="work__more" data-open="Подробнее" data-close="Свернуть">Подробнее</span>
+                <span class="work__chip">Сайт · Соцсети · Видео</span>
               </span>
             </button>
 
-            <div class="work__panel" id="work-3" inert>
+            <dialog class="work__modal" id="work-3" aria-label="Кейс: Про.Дент">
+              <div class="work__mbar">
+                <span class="work__mtitle">Про.Дент<i>Стоматологическая клиника</i></span>
+                <button class="work__close" type="button" aria-label="Закрыть"><span aria-hidden="true"></span></button>
+              </div>
               <div class="work__grid">
                 <div class="work__main">
                   <div class="work__video">
@@ -455,7 +467,7 @@
                   </ul>
                 </aside>
               </div>
-            </div>
+            </dialog>
           </article>
 
         </div>

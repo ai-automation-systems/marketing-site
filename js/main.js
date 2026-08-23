@@ -37,35 +37,29 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".block, .final").forEach(el => observer.observe(el));
 
-// Кейсы: раскрытие карточки. Открыт всегда только один —
-// иначе секция растягивается на пять экранов и теряется.
-document.querySelectorAll(".work").forEach(work => {
-  const head = work.querySelector(".work__head");
-  const more = work.querySelector(".work__more");
-  if (!head) return;
+// Кейсы: плитка открывает окно с подробностями.
+// Нативный <dialog> сам ловит фокус, закрывается по Escape
+// и не даёт странице за собой прокручиваться.
+document.querySelectorAll(".work__tile").forEach(tile => {
+  const modal = document.getElementById(tile.dataset.modal);
+  if (!modal) return;
 
-  head.addEventListener("click", () => {
-    const open = !work.classList.contains("is-open");
+  tile.addEventListener("click", () => modal.showModal());
 
-    document.querySelectorAll(".work.is-open").forEach(other => {
-      if (other === work) return;
-      other.classList.remove("is-open");
-      const h = other.querySelector(".work__head");
-      const m = other.querySelector(".work__more");
-      if (h) h.setAttribute("aria-expanded", "false");
-      if (m) m.textContent = m.dataset.open;
-    });
+  const close = modal.querySelector(".work__close");
+  if (close) close.addEventListener("click", () => modal.close());
 
-    work.classList.toggle("is-open", open);
-    head.setAttribute("aria-expanded", String(open));
-    if (more) more.textContent = open ? more.dataset.close : more.dataset.open;
+  // клик по затемнению — тоже закрытие
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.close();
+  });
 
-    // свёрнутая панель убирается из порядка табуляции целиком:
-    // иначе клавиатура попадает на невидимую кнопку «смотреть видео»
-    document.querySelectorAll(".work").forEach(w => {
-      const panel = w.querySelector(".work__panel");
-      if (panel) panel.toggleAttribute("inert", !w.classList.contains("is-open"));
-    });
+  // окно закрылось: останавливаем видео и возвращаем фокус на плитку.
+  // Фокус ставим следующим тактом: браузер восстанавливает свой уже
+  // после этого события и иначе перебьёт наш вызов.
+  modal.addEventListener("close", () => {
+    modal.querySelectorAll("video").forEach(v => { if (!v.paused) v.pause(); });
+    setTimeout(() => tile.focus(), 0);
   });
 });
 
@@ -83,17 +77,6 @@ document.querySelectorAll(".work__video").forEach(box => {
   });
   video.addEventListener("pause", () => {
     if (video.currentTime === 0) box.classList.remove("is-playing");
-  });
-});
-
-document.querySelectorAll(".work").forEach(work => {
-  const head = work.querySelector(".work__head");
-  if (!head) return;
-  head.addEventListener("click", () => {
-    // после переключения класс уже проставлен обработчиком выше
-    document.querySelectorAll(".work:not(.is-open) .work__v").forEach(v => {
-      if (!v.paused) v.pause();
-    });
   });
 });
 
