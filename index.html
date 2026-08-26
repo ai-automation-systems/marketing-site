@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://ai-automation-systems.github.io/marketing-site/">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon.png">
 
   <!-- превью ссылки в Telegram, VK, WhatsApp -->
   <meta property="og:type" content="website">
@@ -37,12 +38,7 @@
   <header class="header">
     <div class="shell header__inner">
       <a href="#top" class="logo">
-        <svg class="logo__mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <rect x="1.4" y="1.4" width="41.2" height="41.2" rx="3" stroke="currentColor" stroke-width="2.6"/>
-          <text x="22" y="22.6" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="17.5"
-            textLength="27" lengthAdjust="spacingAndGlyphs" text-anchor="middle"
-            dominant-baseline="central" fill="currentColor">СРБ</text>
-        </svg>
+        <img class="logo__mark" src="img/logo-mark.png" alt="" width="44" height="56" decoding="async">
         <span class="logo__text" data-brand>Студия развития бизнеса</span>
       </a>
       <nav class="nav">
@@ -533,6 +529,36 @@
         <p class="final__sub">За 15 минут посмотрим ваши соцсети и рекламу и скажем, что стоит делать, а что не стоит. Бесплатно, ни к чему не обязывает.</p>
         <a href="#" class="btn btn--big" data-tg>Получить бесплатный аудит</a>
         <p class="final__note">Откроется чат в Telegram. Отвечаем в течение рабочего дня</p>
+
+        <ul class="contacts">
+          <li><span>Телефон</span><a href="tel:+79521019067">+7 952 101 90 67</a></li>
+          <li><span>Почта</span><a href="mailto:srbstudio@yandex.ru">srbstudio@yandex.ru</a></li>
+        </ul>
+
+        <div class="lead">
+          <p class="lead__or">или оставьте заявку, разберём и ответим сами</p>
+          <form class="lead__form" novalidate>
+            <label class="lead__field">
+              <span>Ссылка на соцсети или сайт</span>
+              <input type="text" name="link" inputmode="url" autocomplete="url" placeholder="vk.com/company или example.ru" required>
+            </label>
+            <label class="lead__field">
+              <span>Как с вами связаться</span>
+              <input type="text" name="contact" autocomplete="tel" placeholder="телефон или ник в Telegram" required>
+            </label>
+            <label class="lead__field lead__field--wide">
+              <span>Что хотите получить <i>необязательно</i></span>
+              <input type="text" name="task" placeholder="например: мало заявок из ВК">
+            </label>
+            <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="lead__agree">
+              <input type="checkbox" name="agree" required>
+              <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+            </label>
+            <button class="btn lead__submit" type="submit">Отправить заявку</button>
+            <p class="lead__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -541,16 +567,20 @@
   <footer class="footer">
     <div class="shell footer__inner">
       <span class="logo">
-        <svg class="logo__mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <rect x="1.4" y="1.4" width="41.2" height="41.2" rx="3" stroke="currentColor" stroke-width="2.6"/>
-          <text x="22" y="22.6" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="17.5"
-            textLength="27" lengthAdjust="spacingAndGlyphs" text-anchor="middle"
-            dominant-baseline="central" fill="currentColor">СРБ</text>
-        </svg>
+        <img class="logo__mark" src="img/logo-mark.png" alt="" width="44" height="56" decoding="async">
         <span class="logo__text" data-brand>Студия развития бизнеса</span>
       </span>
       <p>© <span data-year>2026</span> · Продвижение и настройка бизнеса</p>
-      <a href="#" data-tg>Telegram</a>
+      <span class="footer__links">
+        <a href="tel:+79521019067">+7 952 101 90 67</a>
+        <a href="mailto:srbstudio@yandex.ru">srbstudio@yandex.ru</a>
+        <a href="#" data-tg>Telegram</a>
+      </span>
+      <p class="footer__legal">
+        Зимин В. С., самозанятый, ИНН 366526108734, Воронеж
+        <a href="oferta.html">Оферта</a>
+        <a href="privacy.html">Обработка данных</a>
+      </p>
     </div>
   </footer>
 
@@ -560,6 +590,8 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Студия развития бизнеса",
+    "telephone": "+7 952 101 90 67",
+    "email": "srbstudio@yandex.ru",
     "description": "Настройка соцсетей, автоматизация, создание сайтов, Яндекс Директ и VK Реклама, фото- и видеоконтент для бизнеса.",
     "url": "https://ai-automation-systems.github.io/marketing-site/",
     "image": "https://ai-automation-systems.github.io/marketing-site/img/og.jpg",

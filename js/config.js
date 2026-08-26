@@ -7,6 +7,12 @@ const SITE_CONFIG = {
   brandName: "Студия развития бизнеса",
 
   // Ссылка на Telegram для всех кнопок связи
-  // Замените "username" на ваш ник, например: https://t.me/ivan_promo
-  telegramUrl: "https://t.me/username",
+  telegramUrl: "https://t.me/studiosrb",
+
+  // Куда форма отправляет заявку. Это адрес функции в Яндекс Облаке,
+  // которая шлёт письмо на вашу почту. Пароль от почты живёт в настройках
+  // функции, в коде сайта его нет.
+  // Пока не подключено — форма честно скажет «напишите в Telegram»
+  // и ничего никуда не отправит.
+  leadEndpoint: "https://functions.yandexcloud.net/d4e59tjagq3ttj35mh9k",
 };

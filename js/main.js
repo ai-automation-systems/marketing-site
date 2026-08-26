@@ -134,3 +134,65 @@ document.querySelectorAll(".work__video").forEach(box => {
   // троттлить тут нечего, а лишнее звено способно залипнуть.
   window.addEventListener("pointermove", e => aim(e.clientX, e.clientY), { passive: true });
 })();
+
+// Форма заявки: отправляет данные в функцию Яндекс Облака,
+// та шлёт письмо на почту. Пока адрес не прописан в config.js —
+// не делаем вид, что заявка ушла, а честно отправляем в Telegram.
+(() => {
+  const form = document.querySelector(".lead__form");
+  if (!form) return;
+
+  const status = form.querySelector(".lead__status");
+  const submit = form.querySelector(".lead__submit");
+  // config.js объявляет SITE_CONFIG через const — в window он не попадает,
+  // поэтому обращаемся к переменной напрямую, как и остальной код файла
+  const endpoint = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.leadEndpoint) || "";
+  const ready = endpoint && !/REPLACE_WITH/.test(endpoint);
+
+  const say = (cls, text) => {
+    status.className = "lead__status " + cls;
+    status.textContent = text;
+  };
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    if (!ready) {
+      say("is-err", "Форма пока настраивается. Напишите нам в Telegram, ответим быстрее.");
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form));
+    delete data.agree;
+
+    const label = submit.textContent;
+    submit.disabled = true;
+    submit.textContent = "Отправляем…";
+    say("", "");
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, page: location.pathname }),
+      });
+      const out = await res.json().catch(() => ({}));
+      // почта ещё не подключена в настройках функции: это не поломка,
+      // а незавершённая настройка — и говорить об этом надо иначе
+      if (out.error === "smtp not configured") {
+        say("is-err", "Форма пока настраивается. Напишите нам в Telegram, ответим быстрее.");
+        return;
+      }
+      if (!res.ok || !out.ok) throw new Error();
+      form.reset();
+      say("is-ok", "Заявку получили. Посмотрим ваши площадки и ответим в течение рабочего дня.");
+    } catch {
+      say("is-err", "Не удалось отправить. Напишите нам в Telegram, разберёмся.");
+    } finally {
+      submit.disabled = false;
+      submit.textContent = label;
+    }
+  });
+})();
