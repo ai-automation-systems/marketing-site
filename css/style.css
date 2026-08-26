@@ -79,19 +79,13 @@ i { font-style: normal; }
   gap: 11px;
   color: var(--white);
 }
-.logo__mark {
-  width: auto;
-  height: 48px;        /* знак выше, чем шире: ширину считает браузер */
-  flex-shrink: 0;
+/* Логотип — готовая надпись из макета, а не набор шрифтом:
+   так начертание совпадает буквально. */
+.logo__img {
   display: block;
-}
-.logo__text {
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  line-height: 1.25;
-  white-space: nowrap;
+  width: auto;
+  height: 68px;
+  flex-shrink: 0;
 }
 .nav { display: flex; gap: 34px; margin-left: auto; margin-right: 8px; }
 .nav a {
@@ -1213,6 +1207,5 @@ i { font-style: normal; }
 
   .footer__inner { flex-direction: column; text-align: center; gap: 16px; }
   /* на узких экранах длинное название переносим в две строки */
-  .logo__text { font-size: 11px; letter-spacing: 0.12em; white-space: normal; max-width: 128px; }
-  .logo__mark { width: auto; height: 38px; }
+  .logo__img { height: 52px; }
 }
