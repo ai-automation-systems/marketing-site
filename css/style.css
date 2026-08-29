@@ -84,7 +84,7 @@ i { font-style: normal; }
 .logo__img {
   display: block;
   width: auto;
-  height: 44px;
+  height: 42px;
   flex-shrink: 0;
 }
 .nav { display: flex; gap: 34px; margin-left: auto; margin-right: 8px; }
@@ -243,13 +243,11 @@ i { font-style: normal; }
 }
 .map__cities text {
   fill: rgba(255, 255, 255, 0.5);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   transition: fill 0.25s;
 }
-.map__city.is-quiet text { opacity: 0; transition: opacity 0.2s; }
-.map__city.is-quiet.is-near text { opacity: 1; }
 .map__city.is-near circle { fill: var(--white); r: 4.6; }
 .map__city.is-near text { fill: var(--white); }
 
@@ -1207,5 +1205,5 @@ i { font-style: normal; }
 
   .footer__inner { flex-direction: column; text-align: center; gap: 16px; }
   /* на узких экранах длинное название переносим в две строки */
-  .logo__img { height: 36px; }
+  .logo__img { height: 34px; }
 }
