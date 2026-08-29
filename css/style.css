@@ -84,7 +84,7 @@ i { font-style: normal; }
 .logo__img {
   display: block;
   width: auto;
-  height: 68px;
+  height: 44px;
   flex-shrink: 0;
 }
 .nav { display: flex; gap: 34px; margin-left: auto; margin-right: 8px; }
@@ -1207,5 +1207,5 @@ i { font-style: normal; }
 
   .footer__inner { flex-direction: column; text-align: center; gap: 16px; }
   /* на узких экранах длинное название переносим в две строки */
-  .logo__img { height: 52px; }
+  .logo__img { height: 36px; }
 }
