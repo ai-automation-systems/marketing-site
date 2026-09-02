@@ -478,28 +478,39 @@
         </ul>
 
         <div class="lead">
-          <p class="lead__or">или оставьте заявку, разберём и ответим сами</p>
-          <form class="lead__form" novalidate>
-            <label class="lead__field">
-              <span>Ссылка на соцсети или сайт</span>
-              <input type="text" name="link" inputmode="url" autocomplete="url" placeholder="vk.com/company или example.ru" required>
-            </label>
-            <label class="lead__field">
-              <span>Как с вами связаться</span>
-              <input type="text" name="contact" autocomplete="tel" placeholder="телефон или ник в Telegram" required>
-            </label>
-            <label class="lead__field lead__field--wide">
-              <span>Что хотите получить <i>необязательно</i></span>
-              <input type="text" name="task" placeholder="например: мало заявок из ВК">
-            </label>
-            <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <label class="lead__agree">
-              <input type="checkbox" name="agree" required>
-              <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
-            </label>
-            <button class="btn lead__submit" type="submit">Отправить заявку</button>
-            <p class="lead__status" role="status" aria-live="polite"></p>
-          </form>
+          <button type="button" class="lead__toggle" aria-expanded="false" aria-controls="lead-panel">
+            <span>Или оставьте заявку</span>
+            <svg class="lead__toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="lead__toggle-note">Разберём ваши площадки и ответим сами</p>
+
+          <div class="lead__panel" id="lead-panel" hidden>
+            <div class="lead__panel-inner">
+              <form class="lead__form" novalidate>
+                <label class="lead__field">
+                  <span>Ссылка на соцсети или сайт</span>
+                  <input type="text" name="link" inputmode="url" autocomplete="url" placeholder="vk.com/company или example.ru" required>
+                </label>
+                <label class="lead__field">
+                  <span>Как с вами связаться</span>
+                  <input type="text" name="contact" autocomplete="tel" placeholder="телефон или ник в Telegram" required>
+                </label>
+                <label class="lead__field lead__field--wide">
+                  <span>Что хотите получить <i>необязательно</i></span>
+                  <input type="text" name="task" placeholder="например: мало заявок из ВК">
+                </label>
+                <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <label class="lead__agree">
+                  <input type="checkbox" name="agree" required>
+                  <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+                </label>
+                <button class="btn lead__submit" type="submit">Отправить заявку</button>
+                <p class="lead__status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>

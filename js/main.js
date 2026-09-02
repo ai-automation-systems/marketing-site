@@ -135,6 +135,32 @@ document.querySelectorAll(".work__video").forEach(box => {
   window.addEventListener("pointermove", e => aim(e.clientX, e.clientY), { passive: true });
 })();
 
+// Кнопка «Или оставьте заявку»: разворачивает форму по клику,
+// чтобы она не висела на странице всегда открытой
+(() => {
+  const toggle = document.querySelector(".lead__toggle");
+  const panel = document.querySelector(".lead__panel");
+  if (!toggle || !panel) return;
+
+  toggle.addEventListener("click", () => {
+    const open = panel.classList.contains("is-open");
+
+    if (open) {
+      panel.classList.remove("is-open");
+      panel.inert = true; // сворачивается визуально через grid-rows;
+      toggle.setAttribute("aria-expanded", "false"); // inert убирает фокус и чтение с экрана сразу, не дожидаясь transitionend
+      return;
+    }
+
+    panel.hidden = false;
+    panel.inert = false;
+    panel.offsetHeight; // форсируем reflow, иначе transition не сыграет
+    panel.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    panel.querySelector("input")?.focus();
+  });
+})();
+
 // Форма заявки: отправляет данные в функцию Яндекс Облака,
 // та шлёт письмо на почту. Пока адрес не прописан в config.js —
 // не делаем вид, что заявка ушла, а честно отправляем в Telegram.
