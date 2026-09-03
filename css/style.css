@@ -1093,21 +1093,47 @@ i { font-style: normal; }
 /* ─────────── Анкета аудита (audit.html) ───────────
    Одна колонка вместо двух: вопросы открытые и длинные,
    в половину ширины не помещаются. Поля те же .lead__field,
-   так что стили input не дублируем, только добавляем textarea. */
+   так что базовые стили input не дублируем — только textarea
+   и укрупнённая типографика вопросов, только внутри .audit__form:
+   на компактной форме заявки на главной мелкие подписи уместны,
+   здесь вопросы длиной в предложение и должны читаться сразу. */
 .audit__intro { padding: 76px 0 8px; }
 .audit__form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  max-width: 640px;
+  gap: 44px;
+  max-width: 700px;
   margin: 64px auto 0;
 }
 .audit__group {
-  margin-top: 4px;
-  padding-top: 30px;
+  margin-top: 10px;
+  padding-top: 44px;
   border-top: 1px solid var(--line);
 }
 .audit__group--first { margin-top: 0; padding-top: 0; border-top: 0; }
+
+.audit__form .lead__field > span {
+  font-size: clamp(17px, 2.3vw, 20px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  opacity: 0.94;
+  margin-bottom: 16px;
+}
+.audit__form .lead__field > span i {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.audit__form .lead__field input,
+.audit__form .lead__field textarea { font-size: 17px; padding: 16px 2px; }
+
 .lead__field textarea {
   width: 100%;
   min-height: 80px;
@@ -1122,9 +1148,15 @@ i { font-style: normal; }
   resize: vertical;
   transition: border-color 0.25s;
 }
+.audit__form .lead__field textarea { min-height: 100px; }
 .lead__field textarea::placeholder { color: rgba(255, 255, 255, 0.26); }
 .lead__field textarea:focus { outline: none; border-bottom-color: var(--white); }
-.audit__submit { width: 100%; }
+.audit__submit { width: 100%; margin-top: 4px; }
+
+@media (max-width: 640px) {
+  .audit__form { gap: 36px; margin-top: 48px; }
+  .audit__group { padding-top: 36px; }
+}
 /* На этой странице нет ни навигации, ни бургера, которые на мобильном
    подменяют кнопку Telegram в шапке — общее правило .header .pill{display:none}
    здесь не подходит, оставляем кнопку видимой через свой модификатор. */
