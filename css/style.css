@@ -1097,13 +1097,14 @@ i { font-style: normal; }
    и укрупнённая типографика вопросов, только внутри .audit__form:
    на компактной форме заявки на главной мелкие подписи уместны,
    здесь вопросы длиной в предложение и должны читаться сразу. */
-.audit__intro { padding: 76px 0 8px; }
+.audit__intro { padding: 88px 0 48px; }
+.audit__block { padding: 0 0 100px; }
 .audit__form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 44px;
   max-width: 700px;
-  margin: 64px auto 0;
+  margin: 0 auto;
 }
 .audit__group {
   margin-top: 10px;
@@ -1154,7 +1155,8 @@ i { font-style: normal; }
 .audit__submit { width: 100%; margin-top: 4px; }
 
 @media (max-width: 640px) {
-  .audit__form { gap: 36px; margin-top: 48px; }
+  .audit__intro { padding: 52px 0 36px; }
+  .audit__form { gap: 36px; }
   .audit__group { padding-top: 36px; }
 }
 /* На этой странице нет ни навигации, ни бургера, которые на мобильном

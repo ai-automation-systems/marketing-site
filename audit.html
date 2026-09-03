@@ -37,69 +37,74 @@
       <div class="shell">
         <p class="tag">Перед аудитом</p>
         <h1 class="final__title">Несколько вопросов, чтобы аудит был предметным</h1>
-        <p class="hero__sub">Ответы уходят нам напрямую и мы отталкиваемся от них, разбирая именно ваши соцсети, рекламу и заявки, а не рассказывая общее. Уйдёт 3–5 минут. Обязательных полей немного, остальное по возможности: чем подробнее, тем точнее выйдет разбор.</p>
+        <p class="hero__sub">Ответы уходят нам напрямую, и мы отталкиваемся от них, разбирая именно ваши соцсети, рекламу и заявки, а не рассказывая общее. Вопросы идут четырьмя короткими блоками, уйдёт 3–5 минут. Обязательных немного, остальное по возможности: чем подробнее, тем точнее выйдет разбор.</p>
       </div>
     </section>
 
-    <section class="block">
+    <section class="audit__block">
       <div class="shell">
         <form class="lead__form audit__form" novalidate>
 
           <p class="tag audit__group audit__group--first">01 · О бизнесе</p>
 
           <label class="lead__field">
-            <span>Имя и компания</span>
+            <span>Имя и компания <i>обязательно</i></span>
             <input type="text" name="name" autocomplete="name" placeholder="Иван, «Компания»" required>
           </label>
 
           <label class="lead__field">
-            <span>Чем занимаетесь</span>
+            <span>Чем занимаетесь <i>обязательно</i></span>
             <textarea name="business" placeholder="Например: продаём и монтируем окна для частных домов" required></textarea>
           </label>
 
           <label class="lead__field">
-            <span>Город, география работы. Адрес, если есть точка</span>
+            <span>Город, география работы. Адрес, если есть точка <i>обязательно</i></span>
             <textarea name="city" placeholder="Воронеж, работаем по области. Адрес, если есть шоурум или офис" required></textarea>
           </label>
 
           <p class="tag audit__group">02 · Что есть сейчас</p>
 
           <label class="lead__field">
-            <span>Ссылки на соцсети и сайт, которые ведёте сейчас</span>
+            <span>Ссылки на соцсети и сайт, которые ведёте сейчас <i>обязательно</i></span>
             <textarea name="channels" placeholder="vk.com/..., instagram.com/..., сайт" required></textarea>
           </label>
 
           <label class="lead__field">
-            <span>Есть ли сейчас активные рекламные кампании и где именно, например Директ или VK Реклама <i>необязательно</i></span>
+            <span>Есть ли сейчас активные рекламные кампании и где именно, например Директ или VK Реклама</span>
             <textarea name="ads" placeholder="Директ, настраивали сами полгода назад. Заявки идут, но дорогие, вложения около 25 тысяч в месяц"></textarea>
           </label>
 
           <label class="lead__field">
-            <span>Сколько заявок в месяц сейчас, примерно <i>необязательно</i></span>
+            <span>Сколько заявок в месяц сейчас, примерно</span>
             <input type="text" name="leads_now" placeholder="10–15 в месяц">
           </label>
 
           <label class="lead__field">
-            <span>Куда падают заявки: просто перечислите каналы <i>необязательно</i></span>
+            <span>Куда падают заявки: просто перечислите каналы</span>
             <input type="text" name="handling" placeholder="ВКонтакте, Telegram, Instagram, звонки. Отвечаю сам">
+          </label>
+
+          <label class="lead__field">
+            <span>Есть ли уже автоматизация: чат-боты, автоответы, автоворонки</span>
+            <textarea name="automation" placeholder="Например: бот ВКонтакте отвечает на частые вопросы, дальше веду сам"></textarea>
           </label>
 
           <p class="tag audit__group">03 · Куда хотите прийти</p>
 
           <label class="lead__field">
-            <span>Сколько заявок в день, неделю или месяц вы реально могли бы обрабатывать <i>необязательно</i></span>
+            <span>Сколько заявок в день, неделю или месяц вы реально могли бы обрабатывать</span>
             <textarea name="goal" placeholder="Например: 5–7 в неделю, больше просто не успеем"></textarea>
           </label>
 
           <label class="lead__field">
-            <span>Что уже пробовали и не сработало <i>необязательно</i></span>
+            <span>Что уже пробовали и не сработало</span>
             <textarea name="tried" placeholder="Например: запускали рекламу у фрилансера, заявки были дорогие"></textarea>
           </label>
 
           <p class="tag audit__group">04 · Связь</p>
 
           <label class="lead__field">
-            <span>Как удобнее с вами связаться</span>
+            <span>Как удобнее с вами связаться <i>обязательно</i></span>
             <input type="text" name="contact" autocomplete="tel" placeholder="Телефон или ник в Telegram" required>
           </label>
 
