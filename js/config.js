@@ -15,4 +15,9 @@ const SITE_CONFIG = {
   // Пока не подключено — форма честно скажет «напишите в Telegram»
   // и ничего никуда не отправит.
   leadEndpoint: "https://functions.yandexcloud.net/d4e59tjagq3ttj35mh9k",
+
+  // Куда уходит анкета со страницы audit.html (отдельная функция,
+  // код в /audit-function). Та же логика: пока пароль не задан,
+  // страница честно скажет «напишите в Telegram».
+  auditEndpoint: "https://functions.yandexcloud.net/d4e7vh1irrd1jqlcjaq1",
 };

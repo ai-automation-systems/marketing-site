@@ -1090,6 +1090,50 @@ i { font-style: normal; }
   .lead__submit { justify-self: stretch; }
 }
 
+/* ─────────── Анкета аудита (audit.html) ───────────
+   Одна колонка вместо двух: вопросы открытые и длинные,
+   в половину ширины не помещаются. Поля те же .lead__field,
+   так что стили input не дублируем, только добавляем textarea. */
+.audit__intro { padding: 76px 0 8px; }
+.audit__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 640px;
+  margin: 64px auto 0;
+}
+.audit__group {
+  margin-top: 4px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.audit__group--first { margin-top: 0; padding-top: 0; border-top: 0; }
+.lead__field textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 14px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  color: var(--white);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.25s;
+}
+.lead__field textarea::placeholder { color: rgba(255, 255, 255, 0.26); }
+.lead__field textarea:focus { outline: none; border-bottom-color: var(--white); }
+.audit__submit { width: 100%; }
+/* На этой странице нет ни навигации, ни бургера, которые на мобильном
+   подменяют кнопку Telegram в шапке — общее правило .header .pill{display:none}
+   здесь не подходит, оставляем кнопку видимой через свой модификатор. */
+/* Специфичность выше, чем у .header .pill{display:none} ниже по файлу,
+   и не зависит от порядка правил в каскаде. */
+@media (max-width: 720px) {
+  .header .pill.pill--always { display: inline-flex; }
+}
+
 /* ─────────── Подвал ─────────── */
 .footer {
   border-top: 1px solid var(--line-soft);

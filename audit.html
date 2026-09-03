@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анкета перед аудитом — Студия развития бизнеса</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       Страница нигде не связана ссылками с остальным
+       сайтом — открывается только по прямой ссылке,
+       которую отправляем лично. Поэтому meta robots
+       выше стоит noindex, а в шапке нет навигации.
+       НАСТРОЙКИ (Telegram) в js/config.js
+       ══════════════════════════════════════════════ -->
+
+  <header class="header">
+    <div class="shell header__inner">
+      <a href="/" class="logo">
+        <img class="logo__img" src="img/logo.png" alt="Студия развития бизнеса" width="1069" height="397" decoding="async">
+      </a>
+      <a href="#" class="pill pill--always" data-tg>Написать в Telegram</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="audit__intro">
+      <div class="shell">
+        <p class="tag">Перед аудитом</p>
+        <h1 class="final__title">Несколько вопросов, чтобы аудит был предметным</h1>
+        <p class="hero__sub">Ответы уходят нам напрямую и мы отталкиваемся от них, разбирая именно ваши соцсети, рекламу и заявки, а не рассказывая общее. Уйдёт 3–5 минут. Обязательных полей немного, остальное по возможности: чем подробнее, тем точнее выйдет разбор.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="shell">
+        <form class="lead__form audit__form" novalidate>
+
+          <p class="tag audit__group audit__group--first">О бизнесе</p>
+
+          <label class="lead__field">
+            <span>Имя и компания</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Иван, «Компания»" required>
+          </label>
+
+          <label class="lead__field">
+            <span>Чем занимаетесь</span>
+            <textarea name="business" placeholder="Например: продаём и монтируем окна для частных домов" required></textarea>
+          </label>
+
+          <label class="lead__field">
+            <span>Город и география работы</span>
+            <input type="text" name="city" placeholder="Воронеж, работаем по области" required>
+          </label>
+
+          <p class="tag audit__group">Что есть сейчас</p>
+
+          <label class="lead__field">
+            <span>Ссылки на соцсети и сайт, которые ведёте сейчас</span>
+            <textarea name="channels" placeholder="vk.com/..., instagram.com/..., сайт" required></textarea>
+          </label>
+
+          <label class="lead__field">
+            <span>Крутится ли сейчас реклама. Где и кто настраивал <i>необязательно</i></span>
+            <textarea name="ads" placeholder="Например: Яндекс Директ, настраивали сами полгода назад"></textarea>
+          </label>
+
+          <label class="lead__field">
+            <span>Сколько заявок в месяц сейчас, примерно <i>необязательно</i></span>
+            <input type="text" name="leads_now" placeholder="10–15 в месяц">
+          </label>
+
+          <label class="lead__field">
+            <span>Куда падают заявки и кто их обрабатывает <i>необязательно</i></span>
+            <input type="text" name="handling" placeholder="В директ ВКонтакте, отвечаю сам">
+          </label>
+
+          <p class="tag audit__group">Куда хотите прийти</p>
+
+          <label class="lead__field">
+            <span>Сколько заявок хотите получать и к какому сроку <i>необязательно</i></span>
+            <textarea name="goal" placeholder="Например: 20 в месяц к Новому году"></textarea>
+          </label>
+
+          <label class="lead__field">
+            <span>Что уже пробовали и не сработало <i>необязательно</i></span>
+            <textarea name="tried" placeholder="Например: запускали рекламу у фрилансера, заявки были дорогие"></textarea>
+          </label>
+
+          <p class="tag audit__group">Связь</p>
+
+          <label class="lead__field">
+            <span>Как удобнее с вами связаться</span>
+            <input type="text" name="contact" autocomplete="tel" placeholder="Телефон или ник в Telegram" required>
+          </label>
+
+          <input class="lead__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <label class="lead__agree">
+            <input type="checkbox" name="agree" required>
+            <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+          </label>
+
+          <button class="btn audit__submit" type="submit">Отправить анкету</button>
+          <p class="lead__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <span class="logo">
+        <img class="logo__img" src="img/logo.png" alt="Студия развития бизнеса" width="1069" height="397" decoding="async">
+      </span>
+      <p>© <span data-year>2026</span> · Продвижение и настройка бизнеса</p>
+      <span class="footer__links">
+        <a href="tel:+79521019067">+7 952 101 90 67</a>
+        <a href="mailto:srbstudio@yandex.ru">srbstudio@yandex.ru</a>
+        <a href="#" data-tg>Telegram</a>
+      </span>
+      <p class="footer__legal">
+        Студия развития бизнеса, Воронеж
+        <a href="oferta.html">Оферта</a>
+        <a href="privacy.html">Обработка данных</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script>
+    // Те же три подстановки, что в main.js — переиспользовать сам файл
+    // не стали: он тянет карту, кейсы и тикер главной, здесь их нет.
+    document.querySelectorAll("[data-tg]").forEach(el => {
+      el.href = SITE_CONFIG.telegramUrl;
+      el.target = "_blank";
+      el.rel = "noopener";
+    });
+    document.querySelectorAll("[data-year]").forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+
+    // Отправка анкеты: та же схема, что форма заявки на главной
+    // (js/main.js), но в отдельную функцию — audit-function.
+    (() => {
+      const form = document.querySelector(".audit__form");
+      if (!form) return;
+
+      const status = form.querySelector(".lead__status");
+      const submit = form.querySelector(".audit__submit");
+      const endpoint = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.auditEndpoint) || "";
+      const ready = endpoint && !/REPLACE_WITH/.test(endpoint);
+
+      const say = (cls, text) => {
+        status.className = "lead__status " + cls;
+        status.textContent = text;
+      };
+
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        if (!ready) {
+          say("is-err", "Анкета пока настраивается. Напишите нам в Telegram, разберём и так.");
+          return;
+        }
+
+        const data = Object.fromEntries(new FormData(form));
+        delete data.agree;
+
+        const label = submit.textContent;
+        submit.disabled = true;
+        submit.textContent = "Отправляем…";
+        say("", "");
+
+        try {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...data, page: location.pathname }),
+          });
+          const out = await res.json().catch(() => ({}));
+          if (out.error === "smtp not configured") {
+            say("is-err", "Анкета пока настраивается. Напишите нам в Telegram, разберём и так.");
+            return;
+          }
+          if (!res.ok || !out.ok) throw new Error();
+          form.reset();
+          say("is-ok", "Анкету получили. Разберём и вернёмся с аудитом в течение рабочего дня.");
+        } catch {
+          say("is-err", "Не удалось отправить. Напишите нам в Telegram, разберёмся.");
+        } finally {
+          submit.disabled = false;
+          submit.textContent = label;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
