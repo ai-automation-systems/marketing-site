@@ -1311,3 +1311,46 @@ i { font-style: normal; }
   /* на узких экранах длинное название переносим в две строки */
   .logo__img { height: 46px; }
 }
+
+/* ─────────── Баннер согласия на куки ───────────
+   Без анимации и наезда на контент: тихая полоса снизу,
+   появляется сразу, никуда не скользит и не мигает. */
+.cookiebar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+  padding: 16px var(--pad);
+  background: #0b0b0b;
+  border-top: 1px solid var(--line);
+}
+.cookiebar p { font-size: 13px; line-height: 1.5; opacity: 0.6; max-width: 62ch; }
+.cookiebar p a { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.cookiebar__actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookiebar__accept,
+.cookiebar__decline {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 9px 20px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.cookiebar__accept { background: var(--white); color: var(--black); border: 1px solid var(--white); }
+.cookiebar__accept:hover { opacity: 0.82; }
+.cookiebar__decline { background: none; color: var(--white); border: 1px solid var(--line); opacity: 0.6; }
+.cookiebar__decline:hover { opacity: 0.9; border-color: rgba(255, 255, 255, 0.4); }
+
+@media (max-width: 560px) {
+  .cookiebar { flex-direction: column; align-items: stretch; padding: 16px 20px; }
+  .cookiebar p { max-width: none; }
+  .cookiebar__actions { justify-content: flex-start; }
+}
