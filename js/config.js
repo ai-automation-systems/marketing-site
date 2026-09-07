@@ -4,7 +4,7 @@
 
 const SITE_CONFIG = {
   // Название бренда (появится в шапке и подвале)
-  brandName: "Студия развития бизнеса",
+  brandName: "2vlad",
 
   // Ссылка на Telegram для всех кнопок связи
   telegramUrl: "https://t.me/studiosrb",
