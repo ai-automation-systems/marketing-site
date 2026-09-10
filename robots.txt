@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://srbstudio.ru/sitemap.xml
+Sitemap: https://2vlad.ru/sitemap.xml
