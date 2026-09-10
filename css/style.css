@@ -13,6 +13,8 @@
   --font: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --shell: 1360px;
   --pad: 40px;
+  --logo-height: 40.6px; /* 70% от прежних 58px */
+  --hero-map-width: 420px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -84,7 +86,7 @@ i { font-style: normal; }
 .logo__img {
   display: block;
   width: auto;
-  height: 58px;
+  height: var(--logo-height);
   flex-shrink: 0;
 }
 .nav { display: flex; gap: 34px; margin-left: auto; margin-right: 8px; }
@@ -112,7 +114,7 @@ i { font-style: normal; }
 .burger { display: none; }
 
 /* ─────────── Хиро ─────────── */
-.hero { padding: 76px 0 60px; }
+.hero { padding: 32px 0 40px; }
 .hero__kicker {
   display: flex;
   align-items: center;
@@ -122,16 +124,17 @@ i { font-style: normal; }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.55;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 .hero__main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 56px;
-  align-items: center;
-  margin-bottom: 56px;
+  grid-template-columns: minmax(0, 1fr) var(--hero-map-width);
+  grid-template-areas: "title map" "details map";
+  gap: 24px 32px;
+  align-items: start;
 }
 .hero__title {
+  grid-area: title;
   font-size: clamp(31px, 5.2vw, 74px);
   text-transform: uppercase;
   line-height: 1;
@@ -143,20 +146,18 @@ i { font-style: normal; }
   justify-self: end;
 }
 .hero__bottom {
+  grid-area: details;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 44px;
-  align-items: end;
-  padding-top: 34px;
-  border-top: 1px solid var(--line);
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: start;
 }
 .hero__sub {
   font-size: 17px;
   max-width: 48ch;
   opacity: 0.68;
 }
-.hero__cta { text-align: right; }
-.hero__note { font-size: 13px; opacity: 0.45; margin-top: 12px; }
+.hero__cta { text-align: left; }
 
 .btn {
   display: inline-block;
@@ -211,12 +212,57 @@ i { font-style: normal; }
   .ticker__row { animation-duration: 60s; }
 }
 
+/* Лента партнёров повторяет ритм верхней ленты услуг. */
+.partners { position: relative; padding: 22px 0; }
+.partners__filters { position: absolute; width: 0; height: 0; overflow: hidden; }
+.partners .ticker__row { animation-duration: 160s; }
+.partners .partners__group {
+  align-items: center;
+  flex: 0 0 auto;
+  gap: clamp(48px, 6vw, 88px);
+  padding-right: clamp(48px, 6vw, 88px);
+}
+.partners__logo {
+  display: block;
+  flex: 0 0 auto;
+  width: var(--partner-width);
+  height: var(--partner-height);
+  overflow: hidden;
+}
+@media (max-width: 720px) {
+  .partners { padding: 18px 0; }
+  .partners__logo { width: calc(var(--partner-width) * .8); height: calc(var(--partner-height) * .8); }
+}
+.partners.is-paused .ticker__row { animation-play-state: paused; }
+.partners + .final { border-top: 0; }
+.partners__pause {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 48px;
+  border: 0;
+  border-left: 1px solid var(--line-soft);
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+}
+.partners__pause svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.partners__play-icon { display: none; }
+.partners.is-paused .partners__pause-icon { display: none; }
+.partners.is-paused .partners__play-icon { display: block; }
+.partners__pause:focus-visible { outline: 1px solid var(--white); outline-offset: -5px; }
+@media (prefers-reduced-motion: reduce) {
+  .partners .ticker__row { animation: none; }
+  .partners__pause { display: none; }
+}
+
 /* ─────────── Карта в первом экране ─────────── */
 /* Стрелка — компас: смотрит туда, где курсор.
    Города и расстояния взяты по реальным координатам. */
 .hero__map {
+  grid-area: map;
+  align-self: center;
   width: 100%;
-  max-width: 440px;
+  max-width: var(--hero-map-width);
   height: auto;
   overflow: visible;
   justify-self: end;
@@ -391,6 +437,83 @@ i { font-style: normal; }
   margin-bottom: 12px;
 }
 .step p { font-size: 14.5px; opacity: 0.62; }
+
+/* Небольшие схемы поясняют действие каждого этапа. */
+.step, .after__card {
+  --ux-width: 84px;
+  --ux-height: 44px;
+  --ux-cycle: 4.8s;
+  position: relative;
+}
+.ux-visual {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  width: var(--ux-width);
+  height: var(--ux-height);
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.step:last-child .ux-visual { right: 0; }
+.after__card .ux-visual { top: 20px; right: 26px; }
+.after__tag { padding-right: calc(var(--ux-width) + 16px); }
+.ux__frame { opacity: 0.22; }
+.ux__muted { opacity: 0.35; }
+.ux__scan { animation: ux-scan var(--ux-cycle) ease-in-out infinite; }
+.ux__draw { stroke-dasharray: 1; animation: ux-draw var(--ux-cycle) ease infinite; }
+.ux__draw--two { animation-delay: 0.35s; }
+.ux__draw--three { animation-delay: 0.7s; }
+.ux__slider { fill: var(--black); animation: ux-slide var(--ux-cycle) ease-in-out infinite; }
+.ux__slider--two { animation-direction: reverse; animation-delay: -1s; }
+.ux__slider--three { animation-delay: -2s; }
+.ux__ring { stroke-dasharray: 1; animation: ux-ring var(--ux-cycle) ease infinite; transform-origin: 42px 22px; transform: rotate(-90deg); }
+.ux__check { stroke-dasharray: 1; animation: ux-draw var(--ux-cycle) ease infinite; animation-delay: 0.5s; }
+.ux__cursor { fill: var(--black); animation: ux-cursor var(--ux-cycle) ease-in-out infinite; }
+.ux__signal { fill: var(--white); animation: ux-signal var(--ux-cycle) ease-in-out infinite; }
+/* Схемы работают только пока соответствующая карточка видна. */
+.ux-visual * { animation-play-state: paused; }
+.is-animating .ux-visual * { animation-play-state: running; }
+@keyframes ux-scan {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50% { transform: translateY(26px); opacity: 0.9; }
+}
+@keyframes ux-draw {
+  0%, 15% { stroke-dashoffset: 1; opacity: 0.2; }
+  40%, 80% { stroke-dashoffset: 0; opacity: 0.9; }
+  100% { stroke-dashoffset: 1; opacity: 0.2; }
+}
+@keyframes ux-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+@keyframes ux-ring {
+  0%, 10% { stroke-dashoffset: 1; opacity: 0.2; }
+  45%, 80% { stroke-dashoffset: 0; opacity: 0.7; }
+  100% { stroke-dashoffset: 1; opacity: 0.2; }
+}
+@keyframes ux-cursor {
+  0%, 100% { transform: translate(0, 0); }
+  45%, 65% { transform: translate(-12px, -3px); }
+  55% { transform: translate(-12px, -1px); }
+}
+@keyframes ux-signal {
+  0%, 100% { transform: translateX(0); opacity: 0.35; }
+  50% { transform: translateX(26px); opacity: 1; }
+}
+@media (max-width: 1080px) {
+  .step:nth-child(2n) .ux-visual { right: 0; }
+}
+@media (max-width: 720px) {
+  .step .ux-visual { top: 18px; right: 0; }
+  .after__card .ux-visual { top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ux-visual * { animation: none; }
+}
 
 /* два сценария после сдачи */
 .after {
@@ -752,40 +875,6 @@ i { font-style: normal; }
   padding: 6px 13px;
 }
 
-/* ── строка «показать примеры лично» ── */
-.works__cta {
-  margin-top: 34px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 26px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 26px;
-  flex-wrap: wrap;
-}
-.works__cta p { font-size: 14.5px; opacity: 0.6; max-width: 62ch; }
-.works__cta p b {
-  display: block;
-  font-size: clamp(17px, 1.8vw, 21px);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  opacity: 1;
-  margin-bottom: 6px;
-}
-.works__cta-btn {
-  flex: none;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 14px 26px;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-}
-.works__cta-btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
-
 @media (max-width: 560px) {
   /* обложка — готовый баннер с вшитым текстом: на узком экране
      он мельчает до нечитаемого, поэтому кадрируем к левой части */
@@ -901,16 +990,12 @@ i { font-style: normal; }
 
 /* строка реквизитов: держится тихо, но на месте */
 .footer__legal {
-  grid-column: 1 / -1;
+  grid-area: legal;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 6px 20px;
-  margin: 22px 0 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  font-size: 12px;
-  opacity: 0.38;
 }
 .footer__legal a {
   text-decoration: none;
@@ -951,6 +1036,7 @@ i { font-style: normal; }
 .contacts a:hover { border-bottom-color: var(--white); }
 
 .footer__links {
+  grid-area: links;
   display: flex;
   flex-wrap: wrap;
   gap: 8px 26px;
@@ -1171,17 +1257,20 @@ i { font-style: normal; }
 /* ─────────── Подвал ─────────── */
 .footer {
   border-top: 1px solid var(--line-soft);
-  padding: 40px 0;
+  padding: 32px 0;
 }
 .footer__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "brand links" "copyright legal";
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+  gap: 16px 32px;
 }
-.footer p { font-size: 14px; opacity: 0.5; }
-.footer a { font-size: 15px; font-weight: 500; }
+.footer__inner > .logo { grid-area: brand; }
+.footer__inner > p:not(.footer__legal) { grid-area: copyright; }
+.footer p { font-size: 13px; opacity: 0.5; }
+.footer a { font-size: 14px; font-weight: 500; }
+.footer__legal a { font-size: inherit; }
 .footer a:hover { opacity: 0.65; }
 
 /* ─────────── Появление ─────────── */
@@ -1198,7 +1287,7 @@ i { font-style: normal; }
 /* ─────────── Адаптив ─────────── */
 @media (max-width: 1080px) {
   :root { --pad: 28px; }
-  .hero__main { grid-template-columns: minmax(0, 1fr) 320px; gap: 36px; }
+  .hero__main { grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .step { padding: 32px 24px 36px 0; }
   .step:nth-child(2n) { border-right: none; padding-right: 0; }
@@ -1208,11 +1297,10 @@ i { font-style: normal; }
 }
 
 @media (max-width: 900px) {
-  .hero__main { grid-template-columns: 1fr; gap: 34px; }
+  .hero__main { grid-template-columns: 1fr; grid-template-areas: "title" "details"; }
   .hero__mark { width: 200px; justify-self: start; opacity: 0.9; }
-  /* карта на узком экране: подписи заданы в единицах viewBox,
-     поэтому при уменьшении их надо увеличивать, иначе не прочесть */
-  .hero__map { width: 330px; justify-self: start; }
+  /* На узком экране карта не занимает место перед основной кнопкой. */
+  .hero__map { display: none; }
   .map__cities text { font-size: 19px; }
   .map__base text { font-size: 15px; }
   .map__read { font-size: 15px; }
@@ -1267,16 +1355,16 @@ i { font-style: normal; }
   .nav-open .burger span:first-child { transform: translateY(4px) rotate(45deg); }
   .nav-open .burger span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
-  .hero { padding: 52px 0 46px; }
-  .hero__kicker { margin-bottom: 28px; letter-spacing: 0.12em; }
-  .hero__main { margin-bottom: 40px; gap: 28px; }
+  .hero { padding: 28px 0 36px; }
+  .hero__kicker { margin-bottom: 20px; letter-spacing: 0.12em; }
+  .hero__main { gap: 20px; }
   .hero__mark { width: 156px; }
   .hero__map { width: 100%; max-width: 340px; }
   .map__cities text { font-size: 21px; }
   .map__base text { font-size: 17px; }
   .map__read { font-size: 17px; }
   .map__scale { font-size: 15px; }
-  .hero__bottom { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .hero__bottom { gap: 20px; }
   .hero__sub { font-size: 16px; }
   .hero__cta { text-align: left; }
   .btn { display: block; text-align: center; padding: 16px 28px; }
@@ -1307,9 +1395,14 @@ i { font-style: normal; }
   .final__sub { font-size: 15.5px; margin-bottom: 32px; }
   .btn--big { padding: 17px 32px; font-size: 15.5px; }
 
-  .footer__inner { flex-direction: column; text-align: center; gap: 16px; }
-  /* на узких экранах длинное название переносим в две строки */
-  .logo__img { height: 46px; }
+  .footer__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "brand" "copyright" "links" "legal";
+    justify-items: start;
+    gap: 16px;
+  }
+  .footer__links, .footer__legal { justify-content: flex-start; }
+  :root { --logo-height: 32.2px; /* 70% от прежних 46px */ }
 }
 
 /* ─────────── Баннер согласия на куки ───────────
