@@ -54,15 +54,6 @@ const approachMotion = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 document.querySelectorAll("#approach .step, #approach .after__card").forEach(card => approachMotion.observe(card));
 
-// Ленту партнёров можно остановить кнопкой, в том числе с клавиатуры.
-const partners = document.querySelector(".partners");
-const partnersPause = partners?.querySelector(".partners__pause");
-partnersPause?.addEventListener("click", () => {
-  const paused = partners.classList.toggle("is-paused");
-  partnersPause.setAttribute("aria-pressed", String(paused));
-  partnersPause.setAttribute("aria-label", paused ? "Продолжить ленту партнёров" : "Приостановить ленту партнёров");
-});
-
 // Кейсы: плитка открывает окно с подробностями.
 // Нативный <dialog> сам ловит фокус, закрывается по Escape
 // и не даёт странице за собой прокручиваться.

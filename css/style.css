@@ -213,14 +213,15 @@ i { font-style: normal; }
 }
 
 /* Лента партнёров повторяет ритм верхней ленты услуг. */
-.partners { position: relative; padding: 22px 0; }
+.partners { position: relative; }
 .partners__filters { position: absolute; width: 0; height: 0; overflow: hidden; }
-.partners .ticker__row { animation-duration: 160s; }
+/* Длительность здесь своя, а скорость — та же. Строка брендов длиннее строки
+   услуг, и при одинаковых 42s лента ползла бы заметно быстрее: считаем от
+   пикселей в секунду, а не от времени оборота. */
+.partners .ticker__row { animation-duration: 54s; }
 .partners .partners__group {
   align-items: center;
   flex: 0 0 auto;
-  gap: clamp(48px, 6vw, 88px);
-  padding-right: clamp(48px, 6vw, 88px);
 }
 .partners__logo {
   display: block;
@@ -230,29 +231,16 @@ i { font-style: normal; }
   overflow: hidden;
 }
 @media (max-width: 720px) {
-  .partners { padding: 18px 0; }
   .partners__logo { width: calc(var(--partner-width) * .8); height: calc(var(--partner-height) * .8); }
+  /* На узких экранах логотипы ужимаются до 0.8, а слова в ленте услуг — нет:
+     без своей длительности бренды поехали бы процентов на девять быстрее. */
+  .partners .ticker__row { animation-duration: 59s; }
 }
-.partners.is-paused .ticker__row { animation-play-state: paused; }
+/* У .final своя верхняя линия — без этого на стыке получилось бы две. */
 .partners + .final { border-top: 0; }
-.partners__pause {
-  position: absolute;
-  inset: 0 0 0 auto;
-  width: 48px;
-  border: 0;
-  border-left: 1px solid var(--line-soft);
-  background: var(--black);
-  color: var(--white);
-  cursor: pointer;
-}
-.partners__pause svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-.partners__play-icon { display: none; }
-.partners.is-paused .partners__pause-icon { display: none; }
-.partners.is-paused .partners__play-icon { display: block; }
-.partners__pause:focus-visible { outline: 1px solid var(--white); outline-offset: -5px; }
+/* Как у ленты услуг: не останавливаем, а замедляем в те же 1.43 раза. */
 @media (prefers-reduced-motion: reduce) {
-  .partners .ticker__row { animation: none; }
-  .partners__pause { display: none; }
+  .partners .ticker__row { animation-duration: 77s; }
 }
 
 /* ─────────── Карта в первом экране ─────────── */
