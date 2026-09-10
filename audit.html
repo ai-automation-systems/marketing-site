@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Анкета перед аудитом — 2vlad</title>
+  <title>Анкета перед аудитом | 2vlad</title>
+  <link rel="canonical" href="https://srbstudio.ru/audit.html">
+  <meta name="twitter:description" content="Расскажите о бизнесе и текущем продвижении, чтобы подготовить предметный разбор.">
+  <meta name="twitter:title" content="Анкета перед аудитом | 2vlad">
+  <meta property="og:site_name" content="2vlad">
+  <meta property="og:url" content="https://srbstudio.ru/audit.html">
+  <meta property="og:description" content="Расскажите о бизнесе и текущем продвижении, чтобы подготовить предметный разбор.">
+  <meta property="og:title" content="Анкета перед аудитом | 2vlad">
+  <meta name="description" content="Расскажите о бизнесе и текущем продвижении, чтобы подготовить предметный разбор.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#000000">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -12,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/content.css">
 </head>
 <body>
 
@@ -25,10 +34,10 @@
 
   <header class="header">
     <div class="shell header__inner">
-      <a href="/" class="logo">
+      <a href="./" class="logo">
         <img class="logo__img" src="img/logo.svg" alt="2vlad" width="2376" height="669" decoding="async">
       </a>
-      <a href="#" class="pill pill--always" data-tg>Написать в Telegram</a>
+      <a href="https://t.me/studiosrb" class="pill pill--always" data-tg>Написать в Telegram</a>
     </div>
   </header>
 
@@ -37,41 +46,42 @@
       <div class="shell">
         <p class="tag">Перед аудитом</p>
         <h1 class="final__title">Несколько вопросов, чтобы аудит был предметным</h1>
-        <p class="hero__sub">Ответы уходят нам напрямую, и мы отталкиваемся от них, разбирая именно ваши соцсети, рекламу и заявки, а не рассказывая общее. Вопросы идут четырьмя короткими блоками, уйдёт 3–5 минут. Обязательных немного, остальное по возможности: чем подробнее, тем точнее выйдет разбор.</p>
+        <p class="hero__sub">Расскажите о бизнесе, текущем продвижении и нужном результате. Это поможет нам подготовиться к разговору. Анкета займёт около 3–5 минут. Необязательные вопросы можно пропустить, если пока нет ответа.</p>
       </div>
     </section>
 
     <section class="audit__block">
       <div class="shell">
+        <noscript><p>Для анкеты нужен JavaScript. Напишите нам в <a href="https://t.me/studiosrb">Telegram</a> или на <a href="mailto:srbstudio@yandex.ru">почту</a>.</p><style>.audit__form { display: none; }</style></noscript>
         <form class="lead__form audit__form" novalidate>
 
           <p class="tag audit__group audit__group--first">01 · О бизнесе</p>
 
           <label class="lead__field">
             <span>Имя и компания <i>обязательно</i></span>
-            <input type="text" name="name" autocomplete="name" placeholder="Иван, «Компания»" required>
+            <input type="text" name="name" maxlength="160" autocomplete="name" placeholder="Иван, «Компания»" required>
           </label>
 
           <label class="lead__field">
             <span>Чем занимаетесь <i>обязательно</i></span>
-            <textarea name="business" placeholder="Например: продаём и монтируем окна для частных домов" required></textarea>
+            <textarea maxlength="3000" name="business" placeholder="Например: продаём и монтируем окна для частных домов" required></textarea>
           </label>
 
           <label class="lead__field">
             <span>Город, география работы. Адрес, если есть точка <i>обязательно</i></span>
-            <textarea name="city" placeholder="Воронеж, работаем по области. Адрес, если есть шоурум или офис" required></textarea>
+            <textarea maxlength="3000" name="city" placeholder="Воронеж, работаем по области. Адрес, если есть шоурум или офис" required></textarea>
           </label>
 
           <p class="tag audit__group">02 · Что есть сейчас</p>
 
           <label class="lead__field">
-            <span>Ссылки на соцсети и сайт, которые ведёте сейчас <i>обязательно</i></span>
-            <textarea name="channels" placeholder="vk.com/..., instagram.com/..., сайт" required></textarea>
+            <span>Ссылки на соцсети и сайт <i>обязательно</i></span>
+            <textarea maxlength="3000" name="channels" placeholder="Ссылки на ваши страницы или «пока нет»" required></textarea>
           </label>
 
           <label class="lead__field">
             <span>Есть ли сейчас активные рекламные кампании и где именно, например Директ или VK Реклама</span>
-            <textarea name="ads" placeholder="Директ, настраивали сами полгода назад. Заявки идут, но дорогие, вложения около 25 тысяч в месяц"></textarea>
+            <textarea maxlength="3000" name="ads" placeholder="Директ, настраивали сами полгода назад. Заявки идут, но дорогие, вложения около 25 тысяч в месяц"></textarea>
           </label>
 
           <label class="lead__field">
@@ -80,32 +90,32 @@
           </label>
 
           <label class="lead__field">
-            <span>Куда падают заявки: просто перечислите каналы</span>
+            <span>Куда приходят заявки</span>
             <input type="text" name="handling" placeholder="ВКонтакте, Telegram, Instagram, звонки. Отвечаю сам">
           </label>
 
           <label class="lead__field">
             <span>Есть ли уже автоматизация: чат-боты, автоответы, автоворонки</span>
-            <textarea name="automation" placeholder="Например: бот ВКонтакте отвечает на частые вопросы, дальше веду сам"></textarea>
+            <textarea maxlength="3000" name="automation" placeholder="Например: бот ВКонтакте отвечает на частые вопросы, дальше веду сам"></textarea>
           </label>
 
           <p class="tag audit__group">03 · Куда хотите прийти</p>
 
           <label class="lead__field">
             <span>Сколько заявок в день, неделю или месяц вы реально могли бы обрабатывать</span>
-            <textarea name="goal" placeholder="Например: 5–7 в неделю, больше просто не успеем"></textarea>
+            <textarea maxlength="3000" name="goal" placeholder="Например: 5–7 в неделю, больше просто не успеем"></textarea>
           </label>
 
           <label class="lead__field">
             <span>Что уже пробовали и не сработало</span>
-            <textarea name="tried" placeholder="Например: запускали рекламу у фрилансера, заявки были дорогие"></textarea>
+            <textarea maxlength="3000" name="tried" placeholder="Например: запускали рекламу у фрилансера, заявки были дорогие"></textarea>
           </label>
 
           <p class="tag audit__group">04 · Связь</p>
 
           <label class="lead__field">
-            <span>Как удобнее с вами связаться <i>обязательно</i></span>
-            <input type="text" name="contact" autocomplete="tel" placeholder="Телефон или ник в Telegram" required>
+            <span>Как с вами связаться <i>обязательно</i></span>
+            <input type="text" name="contact" maxlength="160" placeholder="Телефон или ник в Telegram" required>
           </label>
 
           <input class="lead__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -131,7 +141,7 @@
       <span class="footer__links">
         <a href="tel:+79521019067">+7 952 101 90 67</a>
         <a href="mailto:srbstudio@yandex.ru">srbstudio@yandex.ru</a>
-        <a href="#" data-tg>Telegram</a>
+        <a href="https://t.me/studiosrb" data-tg>Telegram</a>
       </span>
       <p class="footer__legal">
         2vlad, Воронеж
@@ -142,74 +152,7 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script>
-    // Те же три подстановки, что в main.js — переиспользовать сам файл
-    // не стали: он тянет карту, кейсы и тикер главной, здесь их нет.
-    document.querySelectorAll("[data-tg]").forEach(el => {
-      el.href = SITE_CONFIG.telegramUrl;
-      el.target = "_blank";
-      el.rel = "noopener";
-    });
-    document.querySelectorAll("[data-year]").forEach(el => {
-      el.textContent = new Date().getFullYear();
-    });
-
-    // Отправка анкеты: та же схема, что форма заявки на главной
-    // (js/main.js), но в отдельную функцию — audit-function.
-    (() => {
-      const form = document.querySelector(".audit__form");
-      if (!form) return;
-
-      const status = form.querySelector(".lead__status");
-      const submit = form.querySelector(".audit__submit");
-      const endpoint = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.auditEndpoint) || "";
-      const ready = endpoint && !/REPLACE_WITH/.test(endpoint);
-
-      const say = (cls, text) => {
-        status.className = "lead__status " + cls;
-        status.textContent = text;
-      };
-
-      form.addEventListener("submit", async e => {
-        e.preventDefault();
-
-        if (!form.reportValidity()) return;
-
-        if (!ready) {
-          say("is-err", "Анкета пока настраивается. Напишите нам в Telegram, разберём и так.");
-          return;
-        }
-
-        const data = Object.fromEntries(new FormData(form));
-        delete data.agree;
-
-        const label = submit.textContent;
-        submit.disabled = true;
-        submit.textContent = "Отправляем…";
-        say("", "");
-
-        try {
-          const res = await fetch(endpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...data, page: location.pathname }),
-          });
-          const out = await res.json().catch(() => ({}));
-          if (out.error === "smtp not configured") {
-            say("is-err", "Анкета пока настраивается. Напишите нам в Telegram, разберём и так.");
-            return;
-          }
-          if (!res.ok || !out.ok) throw new Error();
-          form.reset();
-          say("is-ok", "Анкету получили. Разберём и вернёмся с аудитом в течение рабочего дня.");
-        } catch {
-          say("is-err", "Не удалось отправить. Напишите нам в Telegram, разберёмся.");
-        } finally {
-          submit.disabled = false;
-          submit.textContent = label;
-        }
-      });
-    })();
-  </script>
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
 </body>
 </html>

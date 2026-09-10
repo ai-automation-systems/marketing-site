@@ -16,14 +16,25 @@ const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav");
 const setMenu = open => {
   document.body.classList.toggle("nav-open", open);
-  burger.setAttribute("aria-expanded", String(open));
+  burger?.setAttribute("aria-expanded", String(open));
+  burger?.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
 };
-burger.addEventListener("click", () =>
+burger?.addEventListener("click", () =>
   setMenu(!document.body.classList.contains("nav-open"))
 );
-nav.querySelectorAll("a").forEach(a =>
+nav?.querySelectorAll("a").forEach(a =>
   a.addEventListener("click", () => setMenu(false))
 );
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && document.body.classList.contains("nav-open")) {
+    setMenu(false);
+    burger?.focus();
+  }
+});
+document.addEventListener("click", event => {
+  if (!event.target.closest(".header")) setMenu(false);
+});
 
 // Плавное появление секций
 const observer = new IntersectionObserver(
@@ -73,6 +84,7 @@ document.querySelectorAll(".work__tile").forEach(tile => {
   // Фокус ставим следующим тактом: браузер восстанавливает свой уже
   // после этого события и иначе перебьёт наш вызов.
   modal.addEventListener("close", () => {
+    if (location.hash === "#" + modal.id) history.replaceState(null, "", location.pathname + location.search);
     modal.querySelectorAll("video").forEach(v => { if (!v.paused) v.pause(); });
     setTimeout(() => tile.focus(), 0);
   });
@@ -177,64 +189,20 @@ document.querySelectorAll(".work__video").forEach(box => {
   });
 })();
 
-// Форма заявки: отправляет данные в функцию Яндекс Облака,
-// та шлёт письмо на почту. Пока адрес не прописан в config.js —
-// не делаем вид, что заявка ушла, а честно отправляем в Telegram.
-(() => {
-  const form = document.querySelector(".lead__form");
-  if (!form) return;
-
-  const status = form.querySelector(".lead__status");
-  const submit = form.querySelector(".lead__submit");
-  // config.js объявляет SITE_CONFIG через const — в window он не попадает,
-  // поэтому обращаемся к переменной напрямую, как и остальной код файла
-  const endpoint = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.leadEndpoint) || "";
-  const ready = endpoint && !/REPLACE_WITH/.test(endpoint);
-
-  const say = (cls, text) => {
-    status.className = "lead__status " + cls;
-    status.textContent = text;
-  };
-
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    if (!ready) {
-      say("is-err", "Форма пока настраивается. Напишите нам в Telegram, ответим быстрее.");
-      return;
+// Direct links from service pages open the relevant project or enquiry form.
+const openLinkedContent = () => {
+  const id = location.hash.slice(1);
+  if (/^work-[1-4]$/.test(id)) {
+    const modal = document.getElementById(id);
+    if (modal && !modal.open) modal.showModal();
+  }
+  if (id === "lead-panel") {
+    const panel = document.querySelector(".lead__panel");
+    if (panel && !panel.classList.contains("is-open")) {
+      document.querySelector(".lead__toggle")?.click();
+      panel.scrollIntoView({block: "center"});
     }
-
-    const data = Object.fromEntries(new FormData(form));
-    delete data.agree;
-
-    const label = submit.textContent;
-    submit.disabled = true;
-    submit.textContent = "Отправляем…";
-    say("", "");
-
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, page: location.pathname }),
-      });
-      const out = await res.json().catch(() => ({}));
-      // почта ещё не подключена в настройках функции: это не поломка,
-      // а незавершённая настройка — и говорить об этом надо иначе
-      if (out.error === "smtp not configured") {
-        say("is-err", "Форма пока настраивается. Напишите нам в Telegram, ответим быстрее.");
-        return;
-      }
-      if (!res.ok || !out.ok) throw new Error();
-      form.reset();
-      say("is-ok", "Заявку получили. Посмотрим ваши площадки и ответим в течение рабочего дня.");
-    } catch {
-      say("is-err", "Не удалось отправить. Напишите нам в Telegram, разберёмся.");
-    } finally {
-      submit.disabled = false;
-      submit.textContent = label;
-    }
-  });
-})();
+  }
+};
+window.addEventListener("hashchange", openLinkedContent);
+openLinkedContent();

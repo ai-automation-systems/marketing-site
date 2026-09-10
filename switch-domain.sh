@@ -5,7 +5,7 @@
 set -e
 cd "$(dirname "$0")"
 sed -i '' 's|https://srbstudio\.ru|https://2vlad.ru|g' \
-  index.html audit.html oferta.html privacy.html robots.txt sitemap.xml
+  ./*.html robots.txt sitemap.xml
 printf '2vlad.ru\n' > CNAME
 echo "Домен переключён на 2vlad.ru. Осталось: git add -A && git commit && git push"
 echo "После пуша GitHub выпустит сертификат — это может занять до суток."
